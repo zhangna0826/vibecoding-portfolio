@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><body><script>
+sessionStorage.setItem('filmfind_last_result', JSON.stringify({
+  movieId: 1,
+  score: 3,
+  maxScore: 3,
+  answers: { mood: 'cheerful', type: 'feel-good', company: 'alone' },
+  timestamp: Date.now()
+}));
+location.href = 'http://localhost:8765/result/';
+</script></body></html>

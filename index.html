@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio showcasing vibe coding projects — creative development with AI-assisted workflows.">
+  <title>Vibe Coding Portfolio</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-blobs" aria-hidden="true">
+    <span class="page-blob page-blob--1"></span>
+    <span class="page-blob page-blob--2"></span>
+  </div>
+
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a href="#" class="nav__brand" aria-label="Home">Na Zhang</a>
+
+      <button
+        class="nav__toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        id="nav-toggle"
+      >
+        <span class="nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="#" class="nav__link nav__link--active" aria-current="page">Home</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav__overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main id="main" class="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__split">
+          <div class="hero__field">
+            <div class="hero__shapes" aria-hidden="true">
+              <span class="hero__shape hero__shape--1"></span>
+              <span class="hero__shape hero__shape--2"></span>
+              <span class="hero__shape hero__shape--3"></span>
+              <span class="hero__shape hero__shape--4"></span>
+              <span class="hero__shape hero__shape--5"></span>
+            </div>
+            <h1 class="hero__display" id="hero-heading">Hi,<br>I'm Na!</h1>
+          </div>
+
+          <div class="hero__panel">
+            <p class="hero__subhead type-subhead">Creative developer portfolio</p>
+            <p class="hero__body type-body">
+              I build expressive digital experiences through AI-assisted workflows — blending design systems,
+              rapid prototyping, and thoughtful interaction. This portfolio showcases selected vibe coding projects
+              from my ARTGR 5840 journey.
+            </p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary btn--lg">View projects</a>
+              <a href="#contact" class="btn btn--secondary btn--lg">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+      <div class="projects__blobs" aria-hidden="true">
+        <span class="projects__blob projects__blob--1"></span>
+        <span class="projects__blob projects__blob--2"></span>
+      </div>
+      <div class="container">
+        <header class="projects__header">
+          <h2 class="type-h1" id="projects-heading">Featured projects</h2>
+          <p class="type-body">
+            A selection of experiments and builds exploring design systems, generative UI, and creative coding workflows.
+          </p>
+        </header>
+
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__media">
+              <img
+                class="project-card__image"
+                src="MovieMatcher/assets/cover_moviematcher.png"
+                alt="MovieMatcher home screen with hero, genre tags, and featured movie grid"
+                width="640"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Prototyping</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">MovieMatcher</h3>
+              <p class="project-card__desc type-body">
+                Built a vanilla JavaScript web app with a three-step quiz, weighted matching algorithm, personalized results, and localStorage watchlist — designed for quick "what should I watch tonight?" decisions.
+              </p>
+              <div class="project-card__links">
+                <a href="MovieMatcher/index.html" class="project-card__link">View case study →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <img
+                class="project-card__image"
+                src="PulseFit/assets/cover_pulsefit.png"
+                alt="PulseFit fitness planner home screen showing today's workout and weekly training overview"
+                width="640"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Prototyping</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">PulseFit</h3>
+              <p class="project-card__desc type-body">
+                Built a dark-theme React app for workout planning, swipe-based session logging, PR tracking, and history — powered by a token-driven design system and Supabase backend.
+              </p>
+              <div class="project-card__links">
+                <a href="PulseFit/index.html" class="project-card__link">View case study →</a>
+                <a href="https://pulsefit-planner.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">Live app →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__image project-card__image--gradient-1" role="img" aria-label="Design system mood board project preview"></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Design systems</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">Mood board to tokens</h3>
+              <p class="project-card__desc type-body">
+                Extracted visual patterns from a graphic design proposal into a full token system, component specs, and DESIGN.md for AI-generated UI.
+              </p>
+              <a href="#" class="project-card__link">View case study →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__image project-card__image--gradient-2" role="img" aria-label="Generative interface project preview"></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Generative UI</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">Prompt-driven screens</h3>
+              <p class="project-card__desc type-body">
+                Built repeatable interface screens from a structured design guide — testing how precisely AI can follow color mapping, spacing, and component rules.
+              </p>
+              <a href="#" class="project-card__link">View case study →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__image project-card__image--gradient-3" role="img" aria-label="Interactive prototype project preview"></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Prototyping</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">Split-layout portfolio</h3>
+              <p class="project-card__desc type-body">
+                A responsive home page using the 40/60 color/content split, interactive project cards, and a sticky navigation bar aligned to the design system.
+              </p>
+              <a href="#" class="project-card__link">View case study →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <div class="project-card__image project-card__image--gradient-4" role="img" aria-label="Creative coding experiment preview"></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge badge--accent">Creative coding</span>
+                <span class="badge">2026</span>
+              </div>
+              <h3 class="project-card__title type-h2">Abstract shape language</h3>
+              <p class="project-card__desc type-body">
+                Explored 3D-inspired decorative elements and palette-graded imagery as background accents while keeping all UI chrome within the orange/blue/neutral set.
+              </p>
+              <a href="#" class="project-card__link">View case study →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="footer__blobs" aria-hidden="true">
+      <span class="footer__blob footer__blob--1"></span>
+      <span class="footer__blob footer__blob--2"></span>
+    </div>
+    <div class="container footer__inner">
+      <div class="footer__brand" id="about">
+        <p class="type-display">Let's build together</p>
+        <p class="type-body">
+          Open to collaborations on design systems, creative development, and AI-assisted product work.
+          Reach out to discuss your next project.
+        </p>
+        <a href="mailto:hello@example.com" class="btn btn--primary">Send an email</a>
+      </div>
+
+      <div class="footer__links">
+        <a href="#" class="footer__link">GitHub</a>
+        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="#" class="footer__link">Behance</a>
+        <a href="mailto:hello@example.com" class="footer__link">hello@example.com</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="type-caption">© 2026 Na Zhang. Vibe Coding Portfolio.</p>
+        <p class="type-caption">Built with DESIGN.md design system.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const overlay = document.getElementById("nav-overlay");
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      overlay.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      overlay.classList.add("is-open");
+      overlay.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.contains("is-open");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  </script>
+</body>
+</html>

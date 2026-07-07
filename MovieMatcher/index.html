@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MovieMatcher — case study from Na Zhang's vibe coding portfolio.">
+  <title>MovieMatcher — Na Zhang</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="project-page pulsefit-case">
+  <div class="page-blobs" aria-hidden="true">
+    <span class="page-blob page-blob--1"></span>
+    <span class="page-blob page-blob--2"></span>
+  </div>
+
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__brand" aria-label="Home">Na Zhang</a>
+
+      <button
+        class="nav__toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        id="nav-toggle"
+      >
+        <span class="nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="../index.html#projects" class="nav__link nav__link--active" aria-current="page">Projects</a></li>
+          <li><a href="../index.html#about" class="nav__link">About</a></li>
+          <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav__overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main id="main" class="main">
+    <section class="project-content pulsefit-case__header" aria-labelledby="project-heading">
+      <div class="container project-content__grid">
+        <a href="../index.html#projects" class="pulsefit-case__back project-card__link">← Back to projects</a>
+
+        <header class="pulsefit-case__intro">
+          <h1 class="type-h1" id="project-heading">MovieMatcher</h1>
+          <p class="type-subhead">A mood-based movie quiz that recommends films and saves picks to a personal watchlist.</p>
+
+          <div class="pulsefit-meta">
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Role</p>
+              <p class="pulsefit-meta__value">Product Designer &amp; Developer</p>
+            </div>
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Timeline</p>
+              <p class="pulsefit-meta__value">2026 · Prototyping</p>
+            </div>
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Tools</p>
+              <p class="pulsefit-meta__value">HTML, CSS, JavaScript</p>
+            </div>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <section class="pulsefit-case__hero" aria-label="MovieMatcher preview">
+      <div class="container">
+        <figure class="pulsefit-case__hero-figure">
+          <img
+            src="assets/mockup_hero_moviematcher.png"
+            alt="MovieMatcher app in a browser frame showing the home page with featured films and genre tags"
+            width="1200"
+            height="675"
+            loading="eager"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-content" aria-label="Case study details">
+      <div class="container project-content__grid">
+        <article class="card">
+          <p class="pulsefit-section__eyebrow">Overview</p>
+          <p class="type-body pulsefit-case__lead">MovieMatcher is a lightweight film recommendation app I designed and built for ARTGR 5840. It helps indecisive viewers pick a movie in under a minute by asking three questions about mood, film type, and company, then surfacing a scored match from a curated catalog. I owned the full experience — quiz flow, recommendation engine, watchlist persistence, and responsive UI — using plain HTML, CSS, and JavaScript with no framework dependencies.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Challenge</h2>
+          <p class="type-body">Streaming libraries are overwhelming; most people spend more time browsing than watching. I needed a focused prototype that felt personal without requiring accounts or a backend. The constraints were clear: four routes (home, quiz, result, watchlist), a 12-film catalog with real metadata, localStorage for saved films, and a matching algorithm transparent enough to explain in a case study.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Solution</h2>
+          <p class="type-body">I shipped a multi-page static app with a stepped quiz UI, progress tracker, and auto-advance on answer selection. A weighted scoring function ranks films by mood, type, and company tags, returning the top match plus three "you might also like" suggestions. The result page shows poster, rating, genres, and synopsis with save-to-watchlist and try-again actions. The watchlist supports filter tabs (all, to watch, watched), toggle watched status, and summary stats. The home page adds genre browsing and a featured grid sorted by rating.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Process</h2>
+          <ol class="pulsefit-stepper" aria-label="Project process steps">
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">1</span>
+              <span class="pulsefit-stepper__label">User Flows</span>
+            </li>
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">2</span>
+              <span class="pulsefit-stepper__label">Quiz UX</span>
+            </li>
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">3</span>
+              <span class="pulsefit-stepper__label">Matching Logic</span>
+            </li>
+            <li class="pulsefit-stepper__step pulsefit-stepper__step--active">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">4</span>
+              <span class="pulsefit-stepper__label">Watchlist</span>
+            </li>
+          </ol>
+          <p class="type-body">I mapped the four-page flow first — home discovery, quiz questions, result reveal, and watchlist management — then built shared modules for movie data, localStorage helpers, and poster fallbacks when images fail to load. The quiz received the most iteration: radio options with selected states, previous/next navigation, and a progress stepper that mirrors the three-question arc. Matching logic lives in a single scoreMovie function with tie-breaking by rating. Popup confirmations and empty states keep the watchlist feel complete even with zero saved films.</p>
+        </article>
+
+        <article class="card pulsefit-style-guide">
+          <h2 class="type-h2">Style guide</h2>
+          <p class="type-body">MovieMatcher pairs a soft gray page field with white cards and a navy hero gradient. System UI typography keeps the layout light; blue drives primary actions, sky-blue accents the hero eyebrow, and gray pills handle genre tags so posters stay the focal point.</p>
+
+          <div class="pulsefit-style-guide__panel">
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Color palette</p>
+              <figure class="pulsefit-case__figure" style="margin: 0 0 var(--space-4);">
+                <img
+                  src="assets/palette_reference_moviematcher.png"
+                  alt="MovieMatcher home hero showing navy gradient background, sky-blue eyebrow text, and blue primary button"
+                  width="800"
+                  height="280"
+                  loading="lazy"
+                  style="border-radius: var(--radius-md);"
+                >
+                <figcaption class="type-caption" style="color: rgba(255,255,255,0.55);">Palette reference from the home hero — navy field, sky accent, and primary blue CTA</figcaption>
+              </figure>
+              <ul class="pulsefit-swatches">
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);"></span>
+                  <span class="pulsefit-swatch__label">Navy gradient · hero field</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #0066cc;"></span>
+                  <span class="pulsefit-swatch__label">Blue · primary action</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #a8c7fa;"></span>
+                  <span class="pulsefit-swatch__label">Sky · hero eyebrow</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #f5f5f7;"></span>
+                  <span class="pulsefit-swatch__label">Gray · page background</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #eef0f4;"></span>
+                  <span class="pulsefit-swatch__label">Mist · genre tag</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #ffffff; border: 1px solid rgba(42,42,42,0.15);"></span>
+                  <span class="pulsefit-swatch__label">White · card surface</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Typography</p>
+              <p class="pulsefit-style-guide__display" style="color: #ffffff;">MovieMatcher</p>
+              <p class="pulsefit-style-guide__heading" style="color: #ffffff;">Section heading · system bold</p>
+              <p class="pulsefit-style-guide__body" style="color: rgba(255,255,255,0.72);">Body copy uses system UI at 16px with comfortable line height for quiz options and film synopses.</p>
+            </div>
+
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Components</p>
+              <div class="pulsefit-style-guide__components">
+                <span class="pulsefit-ui-btn" style="background: #0066cc; color: #ffffff;">Start the quiz</span>
+                <span class="pulsefit-ui-btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.5);">View watchlist</span>
+                <span class="pulsefit-ui-badge" style="background: #eef0f4; color: #444444;">Comedy</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Gallery</h2>
+          <p class="type-body">Three screens trace the core journey — home discovery, quiz flow, and watchlist management.</p>
+          <div class="pulsefit-gallery pulsefit-gallery--screenshots">
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot1_moviematcher.png" alt="MovieMatcher home page with hero, genre tags, and featured movie grid" width="1440" height="1200" loading="lazy">
+              <figcaption class="type-caption">Home — hero CTA, genre browse, and top-rated featured films</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot4_moviematcher.png" alt="MovieMatcher watchlist page with filter tabs and empty state" width="1440" height="1000" loading="lazy">
+              <figcaption class="type-caption">Watchlist — filter tabs, saved films, and summary stats</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot5_moviematcher.png" alt="MovieMatcher quiz with find my film action button" width="1440" height="800" loading="lazy">
+              <figcaption class="type-caption">Quiz — final step before generating a personalized match</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Outcomes</h2>
+          <p class="type-body">MovieMatcher demonstrates end-to-end interaction design with a real recommendation engine and persistent client-side state. The app runs from any static file server, loads in under a second, and degrades gracefully when poster URLs are unavailable. Key learnings: constraining the catalog to 12 films made scoring explainable, and auto-advancing the quiz reduced friction without hiding the progress model. Next steps would include TMDB API integration, streaming availability links, and shareable result cards.</p>
+        </article>
+
+        <article class="card pulsefit-case__deploy">
+          <h2 class="type-h2">Deployment</h2>
+          <p class="type-body">The app is a static multi-page site served from plain HTML, CSS, and JavaScript files. No build step or backend is required — open index.html via a local server to explore every route.</p>
+        </article>
+
+        <nav class="pulsefit-project-nav" aria-label="Project navigation">
+          <a href="../index.html#projects" class="project-card__link">← All projects</a>
+          <a href="../index.html" class="project-card__link">Back to home →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="footer__blobs" aria-hidden="true">
+      <span class="footer__blob footer__blob--1"></span>
+      <span class="footer__blob footer__blob--2"></span>
+    </div>
+    <div class="container footer__inner">
+      <div class="footer__brand" id="about">
+        <p class="type-display">Let's build together</p>
+        <p class="type-body">
+          Open to collaborations on design systems, creative development, and AI-assisted product work.
+          Reach out to discuss your next project.
+        </p>
+        <a href="mailto:hello@example.com" class="btn btn--primary">Send an email</a>
+      </div>
+
+      <div class="footer__links">
+        <a href="#" class="footer__link">GitHub</a>
+        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="#" class="footer__link">Behance</a>
+        <a href="mailto:hello@example.com" class="footer__link">hello@example.com</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="type-caption">© 2026 Na Zhang. Vibe Coding Portfolio.</p>
+        <p class="type-caption">Built with DESIGN.md design system.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const overlay = document.getElementById("nav-overlay");
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      overlay.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      overlay.classList.add("is-open");
+      overlay.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.contains("is-open");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  </script>
+</body>
+</html>
