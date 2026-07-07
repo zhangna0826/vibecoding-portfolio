@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PulseFit — case study from Na Zhang's vibe coding portfolio.">
+  <title>PulseFit — Na Zhang</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="project-page pulsefit-case">
+  <div class="page-blobs" aria-hidden="true">
+    <span class="page-blob page-blob--1"></span>
+    <span class="page-blob page-blob--2"></span>
+  </div>
+
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__brand" aria-label="Home">Na Zhang</a>
+
+      <button
+        class="nav__toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        id="nav-toggle"
+      >
+        <span class="nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="../index.html#projects" class="nav__link nav__link--active" aria-current="page">Projects</a></li>
+          <li><a href="../index.html#about" class="nav__link">About</a></li>
+          <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav__overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main id="main" class="main">
+    <section class="project-content pulsefit-case__header" aria-labelledby="project-heading">
+      <div class="container project-content__grid">
+        <a href="../index.html#projects" class="pulsefit-case__back project-card__link">← Back to projects</a>
+
+        <header class="pulsefit-case__intro">
+          <h1 class="type-h1" id="project-heading">PulseFit</h1>
+          <p class="type-subhead">A fitness planner for weekly training, live session logging, and strength progress.</p>
+
+          <div class="pulsefit-meta">
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Role</p>
+              <p class="pulsefit-meta__value">Product Designer &amp; Developer</p>
+            </div>
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Timeline</p>
+              <p class="pulsefit-meta__value">2026 · Prototyping</p>
+            </div>
+            <div class="pulsefit-meta__item">
+              <p class="pulsefit-meta__label">Tools</p>
+              <p class="pulsefit-meta__value">React, Supabase, Tailwind, Framer Motion</p>
+            </div>
+          </div>
+
+          <div class="pulsefit-case__actions">
+            <a href="https://pulsefit-planner.netlify.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <section class="pulsefit-case__hero" aria-label="PulseFit app preview">
+      <div class="container">
+        <figure class="pulsefit-case__hero-figure">
+          <img
+            src="assets/mockup_hero_pulsefit.png"
+            alt="PulseFit app screens showing workout session logging, home dashboard, and strength progress chart"
+            width="1200"
+            height="675"
+            loading="eager"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-content" aria-label="Case study details">
+      <div class="container project-content__grid">
+        <article class="card">
+          <p class="pulsefit-section__eyebrow">Overview</p>
+          <p class="type-body pulsefit-case__lead">PulseFit is a mobile-first fitness planner I designed and built for ARTGR 5840's final project. The app helps lifters plan weekly routines, log sets and reps during live workouts, and track strength progress over time. I owned the full stack — product flows, dark-theme UI system, React front end, and Supabase data layer — with a seeded demo mode so the experience works without a live backend.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Challenge</h2>
+          <p class="type-body">Generic fitness apps often bury planning and logging under cluttered navigation. I needed a focused phone-native experience that could still support real user accounts, persistent plans, and meaningful progress data. The constraints were tight: every screen had to follow a strict DESIGN.md (neon yellow on charcoal, one primary CTA per view, 390×844 phone viewport), ship across eight core routes, and remain usable in demo mode when Supabase credentials aren't configured.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Solution</h2>
+          <p class="type-body">I shipped a React + TypeScript app with eight routes — home, plans, plan editor, live session, progress, history, settings, and auth — wrapped in a phone shell with a fixed tab bar. Users create multi-day workout plans with muscle-group assignments and exercise catalogs, activate plans to populate a weekly overview, then start sessions from a card-deck UI that supports swipe navigation, weight/rep logging, and inline exercise guides. Progress and history surfaces pull from logged sessions to show PR badges, Recharts strength trends, and expandable session detail. A centralized mock dataset seeds realistic demo data on first sign-in so reviewers can explore the full flow immediately.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Process</h2>
+          <ol class="pulsefit-stepper" aria-label="Project process steps">
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">1</span>
+              <span class="pulsefit-stepper__label">Design System</span>
+            </li>
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">2</span>
+              <span class="pulsefit-stepper__label">User Flows</span>
+            </li>
+            <li class="pulsefit-stepper__step">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">3</span>
+              <span class="pulsefit-stepper__label">Component Build</span>
+            </li>
+            <li class="pulsefit-stepper__step pulsefit-stepper__step--active">
+              <span class="pulsefit-stepper__marker" aria-hidden="true">4</span>
+              <span class="pulsefit-stepper__label">Data Layer</span>
+            </li>
+          </ol>
+          <p class="type-body">I started from PLAN.md user flows and wired blank pages with React Router, Radix UI, Tailwind CSS, and Framer Motion. The design system came first — semantic tokens in tokens.css, component rules in styles.css, and a reference screen to validate every state before building features. I layered Supabase auth and Postgres tables for plans, sessions, and profiles, then added a demoStore fallback that mirrors the same data shape when VITE_USE_MOCK_DATA is enabled. Session logging received the most iteration: the exercise card deck uses a fan-stack layout with swipe gestures, onboarding tips for form guides, and smart defaults from the user's last logged set. Notifications, unit preferences (lbs/kg), and profile settings rounded out the experience.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Sketching</h2>
+          <p class="type-body">Early wireframes explored homepage layouts, plan management, multi-step plan creation, and the live session logging flow. Starred variants became the baseline for high-fidelity screens.</p>
+          <div class="pulsefit-media-grid pulsefit-media-grid--2">
+            <figure class="pulsefit-case__figure">
+              <img src="assets/sketch1_pulsefit.png" alt="Low-fidelity wireframes for PulseFit home, plans, plan editor, and workout session screens" width="800" height="500" loading="lazy">
+              <figcaption class="type-caption">Core flows — home, plans, editor, session</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure">
+              <img src="assets/sketch2_pulsefit.png" alt="Low-fidelity wireframes for PulseFit progress, history, and settings screens" width="800" height="500" loading="lazy">
+              <figcaption class="type-caption">Progress, history, and settings</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Information architecture</h2>
+          <p class="type-body">Eight routes map to distinct jobs — plan, log, track, and configure — with shared navigation between Home, Plans, and History. Each page section maps to a stable DOM anchor for testing and AI-assisted generation.</p>
+          <figure class="pulsefit-case__figure">
+            <img src="assets/Web%20structure.png" alt="PulseFit web structure document listing routes, sections, and primary actions for all eight app pages" width="900" height="600" loading="lazy">
+            <figcaption class="type-caption">Route map and section inventory from PLAN.md</figcaption>
+          </figure>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Visual development</h2>
+          <p class="type-body">Mood-board research balanced high-energy fitness UI references with a restrained dark palette. Neon yellow became the primary action color; orange handles secondary emphasis and count badges without competing with the main CTA.</p>
+          <figure class="pulsefit-case__figure">
+            <img src="assets/moodboard.png" alt="PulseFit mood board with fitness app references, color palettes, typography, and UI inspiration" width="900" height="600" loading="lazy">
+            <figcaption class="type-caption">Reference apps, palette exploration, and type direction</figcaption>
+          </figure>
+        </article>
+
+        <article class="card pulsefit-style-guide">
+          <h2 class="type-h2">Style guide</h2>
+          <p class="type-body">PulseFit uses a dark-theme token system — charcoal surfaces, neon yellow primary actions, and Public Sans across all text. Components share one radius and a border-plus-shadow elevation model.</p>
+
+          <div class="pulsefit-style-guide__panel">
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Color palette</p>
+              <ul class="pulsefit-swatches">
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #121212;"></span>
+                  <span class="pulsefit-swatch__label">Charcoal · bg.base</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #DFFF1C;"></span>
+                  <span class="pulsefit-swatch__label">Neon · accent.primary</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #EF8F76;"></span>
+                  <span class="pulsefit-swatch__label">Orange · accent.secondary</span>
+                </li>
+                <li class="pulsefit-swatch">
+                  <span class="pulsefit-swatch__chip" style="background: #FFFFFF; border: 1px solid rgba(42,42,42,0.15);"></span>
+                  <span class="pulsefit-swatch__label">White · text.primary</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Typography</p>
+              <p class="pulsefit-style-guide__display">PulseFit</p>
+              <p class="pulsefit-style-guide__heading">Section heading · 20px bold</p>
+              <p class="pulsefit-style-guide__body">Body copy uses Public Sans at 16px regular with comfortable line height for session logging and plan editing.</p>
+            </div>
+
+            <div class="pulsefit-style-guide__group">
+              <p class="pulsefit-section__eyebrow">Components</p>
+              <div class="pulsefit-style-guide__components">
+                <span class="pulsefit-ui-btn pulsefit-ui-btn--primary">Start workout</span>
+                <span class="pulsefit-ui-btn pulsefit-ui-btn--secondary">Quick log</span>
+                <span class="pulsefit-ui-badge">PR</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Gallery</h2>
+          <p class="type-body">Six high-fidelity screens trace the core experience — from today's plan on the home dashboard through live logging, exercise guides, plan management, and session history.</p>
+          <div class="pulsefit-gallery pulsefit-gallery--screenshots">
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot1_pulsefit.png" alt="PulseFit home dashboard with today's push and pull workouts, stats, and weekly overview" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">Home — today's workout cards, quick stats, and weekly plan overview</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot2_pulsefit.png" alt="PulseFit live workout session logging bench press sets with reps and weight inputs" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">Session — swipeable exercise deck with set logging and progress tracking</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot3_pulsefit.png" alt="PulseFit exercise guide dialog for barbell row with muscle diagram and form cues" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">Exercise guide — inline form instructions with muscle-group diagram</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot4_pulsefit.png" alt="PulseFit My Plans page listing upper lower and PPL split routines" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">My Plans — saved routines with day-by-day exercise previews</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot5_pulsefit.png" alt="PulseFit plan preview showing push day schedule and bench press exercise detail" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">Plan preview — training-day breakdown with exercise detail modal</figcaption>
+            </figure>
+            <figure class="pulsefit-case__figure pulsefit-gallery__item">
+              <img src="assets/screenshot6_pulsefit.png" alt="PulseFit history page with streak stats, session filters, and past workout log" width="390" height="844" loading="lazy">
+              <figcaption class="type-caption">History — streak metrics, time-range filters, and PR-highlighted session log</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="type-h2">Outcomes</h2>
+          <p class="type-body">PulseFit demonstrates end-to-end product thinking — from structured design tokens and mobile interaction patterns to a working data model with 33 seeded exercises and 12 sessions of history. The app runs in dev with npm run dev, builds cleanly for deployment, and degrades gracefully to demo mode without backend setup. Key learnings: keeping one primary yellow CTA per screen improved scanability on dark surfaces, and matching mock data schemas to Supabase tables made the auth-to-demo transition seamless. Next steps would include rest-timer support, social sharing of PRs, and offline session caching.</p>
+        </article>
+
+        <article class="card pulsefit-case__deploy">
+          <h2 class="type-h2">Deployment</h2>
+          <p class="type-body">The app builds with Vite for static hosting and connects to Supabase when credentials are configured. Demo mode ships with seeded plans, sessions, and a 33-exercise catalog so reviewers can explore every route without setup. Deployed at <a href="https://pulsefit-planner.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">pulsefit-planner.netlify.app</a>.</p>
+          <div class="pulsefit-case__deploy-actions">
+            <a href="https://pulsefit-planner.netlify.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
+            <a href="#" class="btn btn--secondary btn--lg">View source code →</a>
+          </div>
+        </article>
+
+        <nav class="pulsefit-project-nav" aria-label="Project navigation">
+          <a href="../index.html#projects" class="project-card__link">← All projects</a>
+          <a href="../index.html" class="project-card__link">Back to home →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="footer__blobs" aria-hidden="true">
+      <span class="footer__blob footer__blob--1"></span>
+      <span class="footer__blob footer__blob--2"></span>
+    </div>
+    <div class="container footer__inner">
+      <div class="footer__brand" id="about">
+        <p class="type-display">Let's build together</p>
+        <p class="type-body">
+          Open to collaborations on design systems, creative development, and AI-assisted product work.
+          Reach out to discuss your next project.
+        </p>
+        <a href="mailto:hello@example.com" class="btn btn--primary">Send an email</a>
+      </div>
+
+      <div class="footer__links">
+        <a href="#" class="footer__link">GitHub</a>
+        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="#" class="footer__link">Behance</a>
+        <a href="mailto:hello@example.com" class="footer__link">hello@example.com</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="type-caption">© 2026 Na Zhang. Vibe Coding Portfolio.</p>
+        <p class="type-caption">Built with DESIGN.md design system.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const overlay = document.getElementById("nav-overlay");
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      overlay.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      overlay.classList.add("is-open");
+      overlay.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.contains("is-open");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  </script>
+</body>
+</html>
