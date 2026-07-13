@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatcher — Quiz</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/quiz/">Quiz</a>
+      <a href="/watchlist/">Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sectionProgress" class="progress">
+      <div class="progress__steps">
+        <div class="progress__step progress__step--active" data-step="0">
+          <span class="progress__dot"></span>
+          <span class="progress__label">Mood</span>
+        </div>
+        <div class="progress__line"></div>
+        <div class="progress__step" data-step="1">
+          <span class="progress__dot"></span>
+          <span class="progress__label">Type</span>
+        </div>
+        <div class="progress__line"></div>
+        <div class="progress__step" data-step="2">
+          <span class="progress__dot"></span>
+          <span class="progress__label">Company</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectionQ1" class="question question--active" data-question="0">
+      <h2>What mood are you in?</h2>
+      <div class="options" role="radiogroup" aria-label="What mood are you in?"></div>
+    </section>
+
+    <section id="sectionQ2" class="question" data-question="1">
+      <h2>What type of movie do you want?</h2>
+      <div class="options" role="radiogroup" aria-label="What type of movie do you want?"></div>
+    </section>
+
+    <section id="sectionQ3" class="question" data-question="2">
+      <h2>Watching alone or with someone?</h2>
+      <div class="options" role="radiogroup" aria-label="Watching alone or with someone?"></div>
+    </section>
+
+    <div class="quiz-actions">
+      <button type="button" id="btnPrevious" class="btn btn--secondary btn--hidden">Previous</button>
+      <button type="button" id="btnFindFilm" class="btn btn--primary btn--hidden" disabled>Find my film</button>
+    </div>
+  </main>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/quiz.js"></script>
+</body>
+</html>

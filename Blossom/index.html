@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MovieMatcher — case study from Na Zhang's vibe coding portfolio.">
-  <title>MovieMatcher — Na Zhang</title>
+  <meta name="description" content="Blossom — case study from Na Zhang's vibe coding portfolio.">
+  <title>Blossom — Na Zhang</title>
   <link rel="stylesheet" href="../tokens.css">
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -47,8 +47,8 @@
         <a href="../index.html#projects" class="pulsefit-case__back project-card__link">← Back to projects</a>
 
         <header class="pulsefit-case__intro">
-          <h1 class="type-h1" id="project-heading">MovieMatcher</h1>
-          <p class="type-subhead">A mood-based movie quiz that recommends films and saves picks to a personal watchlist.</p>
+          <h1 class="type-h1" id="project-heading">Blossom</h1>
+          <p class="type-subhead">A plant-care tracker that surfaces who needs water today, resets schedules with one tap, and lets you grow a collection from quick-pick templates.</p>
 
           <div class="pulsefit-meta">
             <div class="pulsefit-meta__item">
@@ -61,23 +61,23 @@
             </div>
             <div class="pulsefit-meta__item">
               <p class="pulsefit-meta__label">Tools</p>
-              <p class="pulsefit-meta__value">HTML, CSS, JavaScript</p>
+              <p class="pulsefit-meta__value">React, Vite, Tailwind, React Router</p>
             </div>
           </div>
 
           <div class="pulsefit-case__actions">
-            <a href="https://moviefilmmatcher.netlify.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
+            <a href="https://initialize-plant-watering-dashboard.vercel.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
           </div>
         </header>
       </div>
     </section>
 
-    <section class="pulsefit-case__hero" aria-label="MovieMatcher preview">
+    <section class="pulsefit-case__hero" aria-label="Blossom preview">
       <div class="container">
         <figure class="pulsefit-case__hero-figure">
           <img
-            src="assets/mockup_hero_moviematcher.png"
-            alt="MovieMatcher app in a browser frame showing the home page with featured films and genre tags"
+            src="assets/mockup_hero_blossom.png"
+            alt="Blossom home screen showing Well done banner and My plants grid with Monstera, Peace Lily, Sunflower, and Succulent"
             width="1200"
             height="675"
             loading="eager"
@@ -90,23 +90,23 @@
       <div class="container project-content__grid">
         <article class="project-content__section">
           <p class="pulsefit-section__eyebrow">Overview</p>
-          <p class="type-body pulsefit-case__lead">MovieMatcher is a lightweight film recommendation app I designed and built for ARTGR 5840. It helps indecisive viewers pick a movie in under a minute by asking three questions about mood, film type, and company, then surfacing a scored match from a curated catalog. I owned the full experience — quiz flow, recommendation engine, watchlist persistence, and responsive UI — using plain HTML, CSS, and JavaScript with no framework dependencies.</p>
+          <p class="type-body pulsefit-case__lead">Blossom is a mobile-first plant watering app I designed and built for ARTGR 5840, starting from a Figma Make export and refining it through vibe coding. It helps plant owners see who needs water today, mark plants as watered in one tap, and add new plants from quick-pick templates or custom details. I owned the full experience — home dashboard, watering interaction, Add Plant flow, plant state logic, and a DESIGN.md-driven visual system — using React, Vite, Tailwind, and React Router with client-side state and no backend.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Challenge</h2>
-          <p class="challenge-statement">Streaming libraries are overwhelming; most people spend more time browsing than watching.</p>
-          <p class="type-body">I needed a focused prototype that felt personal without requiring accounts or a backend. The constraints were clear: four routes (home, quiz, result, watchlist), a 12-film catalog with real metadata, localStorage for saved films, and a matching algorithm transparent enough to explain in a case study.</p>
+          <p class="challenge-statement">Houseplant owners forget watering schedules until leaves droop — and juggling different frequencies for Monstera, Peace Lily, and succulents makes a simple reminder feel messy.</p>
+          <p class="type-body">I needed a focused prototype that felt like a phone app, not a marketing dashboard, without accounts or a database. The constraints were clear: front-end only, a Home + Add Plant flow, status badges (Healthy / Soon / Water today), live countdown timers, and a calm botanical UI grounded in a written design system rather than one-off styles.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Solution</h2>
-          <p class="type-body">I shipped a multi-page static app with a stepped quiz UI, progress tracker, and auto-advance on answer selection. A weighted scoring function ranks films by mood, type, and company tags, returning the top match plus three "you might also like" suggestions. The result page shows poster, rating, genres, and synopsis with save-to-watchlist and try-again actions. The watchlist supports filter tabs (all, to watch, watched), toggle watched status, and summary stats. The home page adds genre browsing and a featured grid sorted by rating.</p>
+          <p class="type-body">I shipped a React SPA with a compact home screen: Blossom leaf wordmark, time-based greeting, and a one-line care summary. Plants due today rise into a dark-green priority card with a white Watered button; the My plants grid shows icons, scientific names, next-water countdowns, and status badges. Tapping Watered resets the plant’s interval, flips the badge to Healthy, disables the button until the next cycle, and shows a brief confirmation — watering from the priority section transforms that card into a “Well done!” success state. Add Plant offers Quick pick templates (Monstera, Peace Lily, Sunflower, Succulent, Fern, Cactus) plus name and watering-frequency fields, initializing new plants so their Watered control matches their schedule.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Process</h2>
-          <p class="type-body">How I moved from problem framing to a shipped prototype — across discovery, design, development, and delivery.</p>
+          <p class="type-body">How I moved from a Figma Make starter to a token-aligned mobile prototype — across discovery, design, development, and delivery.</p>
           <ol class="pulsefit-stepper" aria-label="Design and development process">
             <li class="pulsefit-stepper__step">
               <span class="pulsefit-stepper__marker" aria-hidden="true">1</span>
@@ -128,80 +128,77 @@
           <div class="pulsefit-process__details">
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Discover</p>
-              <p class="type-body">Scoped four routes, a 12-film catalog with real metadata, localStorage persistence, and a transparent matching algorithm before writing code.</p>
+              <p class="type-body">Scoped Home (/) and Add Plant flows, plant model (name, scientific name, frequencyDays, lastWateredDate), and status derived from next-water timing; no login or backend.</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Design</p>
-              <p class="type-body">Mapped the home-to-quiz-to-result journey, then designed radio options, a three-step progress tracker, and auto-advance on answer selection.</p>
+              <p class="type-body">Authored DESIGN.md (green-first palette, Nunito, bubbly radii, flat borders) and restyled the UI to match — renaming Verdant → Blossom, replacing the web “Dashboard” hero with a compact app header, and elevating the priority card with dark green (#3B6D11).</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Develop</p>
-              <p class="type-body">Built shared modules for movie data, localStorage helpers, and a scoreMovie function with rating tie-breaks; wired the multi-page flow in plain HTML, CSS, and JavaScript.</p>
+              <p class="type-body">Implemented mark-as-watered with countdown reset, badge/button state changes, section-scoped confirmation animation, new-plant initial state fixes, and Quick pick + Details on Add Plant.</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Deliver</p>
-              <p class="type-body">Added poster fallbacks, watchlist filter tabs, empty states, and popup confirmations, then deployed the static build to Netlify.</p>
+              <p class="type-body">Tightened mobile spacing, fixed surface contrast so white cards read on mint, polished primary CTAs, and deployed the Vite build to Vercel.</p>
             </div>
           </div>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">AI-Assisted Development</h2>
-          <p class="type-body">A look at some of the actual prompts used to build this app with AI assistance.</p>
+          <p class="type-body">A look at some of the actual prompts used to build this app with AI assistance — from watering interaction and bug fixes to design-system restyle and mobile polish.</p>
 
           <div class="prompt-walkthrough" data-prompt-walkthrough aria-roledescription="carousel" aria-label="Prompt walkthrough">
             <div class="prompt-walkthrough__header">
               <span class="badge badge--accent">Prompt walkthrough</span>
-              <p class="prompt-walkthrough__counter" data-prompt-counter aria-live="polite">1 / 4</p>
+              <p class="prompt-walkthrough__counter" data-prompt-counter aria-live="polite">1 / 5</p>
             </div>
 
             <div class="prompt-walkthrough__viewport">
               <div class="prompt-walkthrough__track" data-prompt-track>
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="false">
-                  <h3 class="prompt-walkthrough__title">Slide 1 — Initializing the multipage structure</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Help me initialize a multipage web application with following blank pages. Do not use any framework. You should only use HTML, css and JS.
-Step 1: Initiate document structure
-Home Page: /
-Quiz Page: /quiz
-Result Page: /result
-Watchlist Page: /watchlist</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 1 — Implementing the watering flow</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Implement the watering feature for the following task: START: User is on the Home Page (/). User sees a plant card that needs watering (status is "Water today" or "Soon"). User clicks the "Watered" button on the plant card. System resets the countdown timer to the plant's default watering interval. System changes the button from black to grey (disabled state). System updates the status badge from "Water today" or "Soon" to "Healthy". If the plant was in the "Needs watering today" section at the top, remove it from that section. System briefly shows a "✅ Watered!" confirmation animation or toast message on the card. END.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked as expected. However, the Result page showed as a parallel nav tab. It should only be reached after completing the quiz. This will be addressed in a later prompt.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. Countdown reset, badge/button states, and confirmation animation shipped; later prompts refined priority-section behavior.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 2 — Building the quiz-to-result user flow logic</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please implement a feature that support following user flow:
-Step 3: Generate logics based on user flow
-User Flow 1 — Take the quiz and get a recommended movie
-START: User is on the home page (/). User clicks "Start the quiz" button. System navigates to the quiz page (/quiz). User answers Question 1 (mood). The "Next" button stays disabled until an answer is selected. User answers Question 2 (type), then Question 3 (company), one question at a time. After the last question, user clicks "Find my film". System scores every movie against the three answers and navigates to the result page (/result), showing the best-matching movie with its poster, synopsis, and rating. If satisfied, user stays on result page (END) or continues to save the movie. If not, user clicks "Try again" and returns to the quiz page to restart. END.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 2 — Scoping the Watered animation to the clicked card</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>There's a bug: when I click "Watered" on a plant card in the "My Plants" section, the card in the "Needs watering today" section at the top also turns green and shows the animation. They should be independent. The green "Watered!" animation should only appear on the exact card that was clicked, not on any other card. Please fix this.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">No issues found.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Fixed by keying flash state to plant ID + section (priority vs grid) so only the clicked card animates.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 3 — Refining the quiz interaction</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please make two changes to the quiz page:
-1. Swap the answer options between Question 1 and Question 2. Question 1 "What mood are you in?" should use the options that are currently under Question 2. Question 2 "What type of movie do you want?" should use the options currently under Question 1.
-2. When the user clicks an answer option, move to the next question directly without clicking the Next button. Also add a "Previous" button so the user can go back to the previous question to change their answer. Remove the Next button.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 3 — Priority card success state</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>When user clicks "Mark as watered" on the card in the "Needs watering today" section, don't remove the card. Instead, keep the card here but change it. For example, show a message like "Well done! 🌿 No plants need water today" with a green background, and hide the button.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked well. The options were correctly swapped between the two questions.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Priority card transforms into a success banner; heading hides when nothing remains due.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 4 — Adding featured movies and genre filtering</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please make two improvements to the home page:
-1. Add a "Featured Movies" section below the genre tags. Show 4-6 movie cards in a grid, each with a poster image (use a colored placeholder with the movie title if no real image is available), movie title, genre tags, and rating.
-2. Make the genre tags clickable. When a user clicks a genre (e.g. "Action"), filter the featured movies section to only show movies matching that genre. Clicking the same genre again deselects it and shows all movies. Highlight the selected genre tag to show it is active.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 4 — Restyling to DESIGN.md and renaming to Blossom</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Use DESIGN.md as the single source of truth for all styling in this project. Restyle the entire UI to fully follow the design system defined in DESIGN.md. Do not invent new colors, typography styles, border radii, or component patterns. Then: The "Verdant" logo at the top is stuck in an ugly boxed header with a border around it. Just show the Verdant wordmark cleanly on the header. Then change Verdant to Blossom. Follow DESIGN.md for the styles.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked well. Movie cards with posters appeared in a grid layout, and clicking a genre tag correctly filtered the displayed movies. The active genre was highlighted to show the current selection.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Token-aligned restyle landed; wordmark sits on the page canvas as Blossom without a boxed header bar.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 5 — Mobile home header and priority card contrast</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>The home screen has a "Dashboard" title. It looks like a web page, not a phone app. Remove the word "Dashboard" and the long subtitle. Instead put a small app header with the "Blossom" name and a leaf icon at the top, then a short greeting like "Good morning" with a one-line summary like "1 plant needs water today". Keep it compact. Follow DESIGN.md. The "Needs watering today" card should use a dark green background to stand out, with white text and a white "Watered" button with green text.</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Compact greeting + summary replaced the web hero; dark priority card became the clear urgent call-to-action.</p>
                   </div>
                 </article>
               </div>
@@ -214,6 +211,7 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 5" aria-selected="false"></button>
               </div>
               <button type="button" class="btn btn--secondary" data-prompt-next>Next</button>
             </div>
@@ -222,52 +220,52 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
 
         <article class="project-content__section pulsefit-style-guide">
           <h2 class="type-h2">Style guide</h2>
-          <p class="type-body">MovieMatcher pairs a soft gray page field with white cards and a navy hero gradient. System UI typography keeps the layout light; blue drives primary actions, sky-blue accents the hero eyebrow, and gray pills handle genre tags so posters stay the focal point.</p>
+          <p class="type-body">Blossom follows a calm botanical system — soft mint <code>bg-page</code>, warm off-white cards, and a 10-step green scale for text and primary actions. Nunito carries the UI; bubbly pill buttons and hairline borders replace shadows. Status badges use sky (“Soon”) and clay/cream (“Water today”) accents sparingly; the priority card uses deep green (#3B6D11) with a white Watered control so urgent care never blends into the grid.</p>
 
           <div class="pulsefit-style-guide__panel">
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Color palette</p>
               <ul class="pulsefit-swatches">
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);"></span>
-                  <span class="pulsefit-swatch__label">Navy gradient · hero field</span>
+                  <span class="pulsefit-swatch__chip" style="background: #DDF3E4;"></span>
+                  <span class="pulsefit-swatch__label">Mint · page canvas</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #0066cc;"></span>
-                  <span class="pulsefit-swatch__label">Blue · primary action</span>
+                  <span class="pulsefit-swatch__chip" style="background: #FAFCFA;"></span>
+                  <span class="pulsefit-swatch__label">Warm white · cards</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #a8c7fa;"></span>
-                  <span class="pulsefit-swatch__label">Sky · hero eyebrow</span>
+                  <span class="pulsefit-swatch__chip" style="background: #3B6D11;"></span>
+                  <span class="pulsefit-swatch__label">Deep green · priority</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #f5f5f7;"></span>
-                  <span class="pulsefit-swatch__label">Gray · page background</span>
+                  <span class="pulsefit-swatch__chip" style="background: #6BCB77;"></span>
+                  <span class="pulsefit-swatch__label">Accent · primary CTA</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #eef0f4;"></span>
-                  <span class="pulsefit-swatch__label">Mist · genre tag</span>
+                  <span class="pulsefit-swatch__chip" style="background: #E3F4FA;"></span>
+                  <span class="pulsefit-swatch__label">Sky · Soon badge</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #ffffff; border: 1px solid rgba(42,42,42,0.15);"></span>
-                  <span class="pulsefit-swatch__label">White · card surface</span>
+                  <span class="pulsefit-swatch__chip" style="background: #1A3D2E;"></span>
+                  <span class="pulsefit-swatch__label">Forest · headings</span>
                 </li>
               </ul>
             </div>
 
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Typography</p>
-              <p class="pulsefit-style-guide__display" style="color: #ffffff;">MovieMatcher</p>
-              <p class="pulsefit-style-guide__heading" style="color: #ffffff;">Section heading · system bold</p>
-              <p class="pulsefit-style-guide__body" style="color: rgba(255,255,255,0.72);">Body copy uses system UI at 16px with comfortable line height for quiz options and film synopses.</p>
+              <p class="pulsefit-style-guide__display" style="color: #ffffff;">Blossom</p>
+              <p class="pulsefit-style-guide__heading" style="color: #ffffff;">Section heading · Nunito</p>
+              <p class="pulsefit-style-guide__body" style="color: rgba(255,255,255,0.72);">One friendly type family for logo, greetings, and body — rounded, calm, and easy to read on mint surfaces.</p>
             </div>
 
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Components</p>
               <div class="pulsefit-style-guide__components">
-                <span class="pulsefit-ui-btn" style="background: #0066cc; color: #ffffff;">Start the quiz</span>
-                <span class="pulsefit-ui-btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.5);">View watchlist</span>
-                <span class="pulsefit-ui-badge" style="background: #eef0f4; color: #444444;">Comedy</span>
+                <span class="pulsefit-ui-btn" style="background: #6BCB77; color: #ffffff;">Watered</span>
+                <span class="pulsefit-ui-btn" style="background: #ffffff; color: #3B6D11; border: 1px solid #3B6D11;">Watered · priority</span>
+                <span class="pulsefit-ui-badge" style="background: #E3F4FA; color: #3D6578;">Soon</span>
               </div>
             </div>
           </div>
@@ -275,53 +273,53 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
 
         <article class="project-content__section">
           <h2 class="type-h2">Gallery</h2>
-          <p class="type-body">Four screens trace the core journey — home discovery, quiz, personalized result, and watchlist management.</p>
+          <p class="type-body">Four screens trace the core journey — urgent watering, confirmation feedback, adding a plant, and an all-caught-up home.</p>
           <div class="pulsefit-gallery pulsefit-gallery--screenshots pulsefit-gallery--framed">
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge home screenshot">
-                <img src="assets/screenshot1_moviematcher.png" alt="MovieMatcher home page with navy hero, Start the quiz CTA, genre tags, and featured movie posters" width="1440" height="1200" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge Needs watering today screenshot">
+                <img src="assets/screenshot1_blossom.png" alt="Blossom home with Peace Lily priority card overdue and My plants grid showing Monstera, Peace Lily, Sunflower, and Succulent" width="390" height="844" loading="lazy">
               </button>
-              <figcaption class="type-caption">Home — hero CTA, genre browse, and featured films from the catalog</figcaption>
+              <figcaption class="type-caption">Needs watering today — Peace Lily priority card with overdue timer and Watered CTA</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge quiz screenshot">
-                <img src="assets/screenshot2_moviematcher.png" alt="MovieMatcher quiz on the Type step asking what type of movie you want, with Thoughtful and reflective selected" width="1440" height="900" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge just watered confirmation screenshot">
+                <img src="assets/screenshot2_blossom.png" alt="Blossom My plants grid with Watered confirmation overlay on Monstera and Healthy or Soon badges on other plants" width="390" height="844" loading="lazy">
               </button>
-              <figcaption class="type-caption">Quiz — Mood / Type / Company stepper with selectable answer cards and Previous</figcaption>
+              <figcaption class="type-caption">Just watered — confirmation overlay on Monstera and Healthy / Soon badges in the grid</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge result screenshot">
-                <img src="assets/screenshot3_moviematcher.png" alt="MovieMatcher result page showing Get Out as Your Match with Save to watchlist, Try again, and related picks" width="1440" height="1200" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge Add a plant screenshot">
+                <img src="assets/screenshot3_blossom.png" alt="Blossom Add a plant screen with Quick pick templates and Details fields for plant name and watering frequency" width="390" height="844" loading="lazy">
               </button>
-              <figcaption class="type-caption">Result — top match with poster, synopsis, save actions, and related suggestions</figcaption>
+              <figcaption class="type-caption">Add a plant — Quick pick templates plus name and watering frequency</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge watchlist screenshot">
-                <img src="assets/screenshot4_moviematcher.png" alt="MovieMatcher My Watchlist with All To watch Watched filters, four saved films, and summary stats" width="1440" height="1000" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge all caught up home screenshot">
+                <img src="assets/screenshot4_blossom.png" alt="Blossom home with Well done banner and plant cards showing next water countdowns" width="390" height="844" loading="lazy">
               </button>
-              <figcaption class="type-caption">Watchlist — filter tabs, saved films with status actions, and total / watched / remaining stats</figcaption>
+              <figcaption class="type-caption">All caught up — Well done banner and My plants grid with next-water countdowns</figcaption>
             </figure>
           </div>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Outcomes</h2>
-          <p class="type-body">MovieMatcher demonstrates end-to-end interaction design with a real recommendation engine and persistent client-side state. The app runs from any static file server, loads in under a second, and degrades gracefully when poster URLs are unavailable.</p>
+          <p class="type-body">Blossom demonstrates end-to-end interaction design for a care-habit loop: status at a glance, one-tap watering with clear confirmation, and a low-friction add flow. The app runs as a Vite/React build on Vercel, keeps plant state in the client, and ships with sample plants plus empty and all-caught-up home states for demos.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Reflection</h2>
-          <p class="type-body">Building MovieMatcher solo forced clear scope decisions early — a 12-film catalog and three quiz questions kept the matching logic explainable and the case study honest. Auto-advancing the quiz reduced friction without hiding progress, which worked well for a “pick something tonight” use case. Next time I would connect a live catalog via TMDB, surface streaming availability on the result page, and add shareable result cards so recommendations can leave the browser. The main takeaway: a constrained prototype with transparent scoring taught more about product judgment than a larger feature set would have.</p>
+          <p class="type-body">Vibe coding Blossom worked best when prompts described exact start/end states — the watering task, animation scoping, and DESIGN.md restyle were faster than vague “make it nicer” requests. Treating DESIGN.md as the single source of truth kept the mint canvas, white cards, and dark priority card coherent after the Figma Make export. Next time I would persist plants in localStorage, add per-plant edit/delete, and support custom watering intervals beyond the preset frequencies. The main takeaway: a written design system plus precise interaction prompts turns a starter export into a product that feels intentional on a phone.</p>
         </article>
 
         <article class="project-content__section pulsefit-case__deploy pulsefit-case__cta">
           <h2 class="type-h2">Deployment</h2>
-          <p class="type-body">The app is a static multi-page site built with plain HTML, CSS, and JavaScript — no build step or backend required. Deployed at <a href="https://moviefilmmatcher.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">moviefilmmatcher.netlify.app</a>.</p>
+          <p class="type-body">The app is a Vite + React single-page app (Tailwind, React Router) deployed to Vercel at <a href="https://initialize-plant-watering-dashboard.vercel.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">initialize-plant-watering-dashboard.vercel.app</a>.</p>
           <div class="pulsefit-case__cta-panel">
             <p class="pulsefit-case__cta-title">Try it yourself</p>
-            <p class="type-body">Open the live prototype to walk through the quiz, get a match, and save films to your watchlist — no account required.</p>
+            <p class="type-body">Open the live prototype to water a plant, watch the countdown reset, and add a new one from Quick pick — no account required.</p>
             <div class="pulsefit-case__deploy-actions">
-              <a href="https://moviefilmmatcher.netlify.app/" class="btn btn--primary btn--lg pulsefit-case__cta-btn" target="_blank" rel="noopener noreferrer">View live app →</a>
+              <a href="https://initialize-plant-watering-dashboard.vercel.app/" class="btn btn--primary btn--lg pulsefit-case__cta-btn" target="_blank" rel="noopener noreferrer">View live app →</a>
             </div>
           </div>
         </article>

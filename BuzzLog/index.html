@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MovieMatcher — case study from Na Zhang's vibe coding portfolio.">
-  <title>MovieMatcher — Na Zhang</title>
+  <meta name="description" content="BuzzLog — case study from Na Zhang's vibe coding portfolio.">
+  <title>BuzzLog — Na Zhang</title>
   <link rel="stylesheet" href="../tokens.css">
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -47,8 +47,8 @@
         <a href="../index.html#projects" class="pulsefit-case__back project-card__link">← Back to projects</a>
 
         <header class="pulsefit-case__intro">
-          <h1 class="type-h1" id="project-heading">MovieMatcher</h1>
-          <p class="type-subhead">A mood-based movie quiz that recommends films and saves picks to a personal watchlist.</p>
+          <h1 class="type-h1" id="project-heading">BuzzLog</h1>
+          <p class="type-subhead">A caffeine tracker that logs drinks by category, serving size, and mg — with a shaking status emoji that tracks how wired you are.</p>
 
           <div class="pulsefit-meta">
             <div class="pulsefit-meta__item">
@@ -61,23 +61,19 @@
             </div>
             <div class="pulsefit-meta__item">
               <p class="pulsefit-meta__label">Tools</p>
-              <p class="pulsefit-meta__value">HTML, CSS, JavaScript</p>
+              <p class="pulsefit-meta__value">HTML, CSS, JavaScript, Tailwind</p>
             </div>
-          </div>
-
-          <div class="pulsefit-case__actions">
-            <a href="https://moviefilmmatcher.netlify.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
           </div>
         </header>
       </div>
     </section>
 
-    <section class="pulsefit-case__hero" aria-label="MovieMatcher preview">
+    <section class="pulsefit-case__hero" aria-label="BuzzLog preview">
       <div class="container">
         <figure class="pulsefit-case__hero-figure">
           <img
-            src="assets/mockup_hero_moviematcher.png"
-            alt="MovieMatcher app in a browser frame showing the home page with featured films and genre tags"
+            src="assets/mockup_hero_buzzlog.png"
+            alt="BuzzLog hero banner showing the wordmark How wired are you, with side-by-side phone mockups of the jittery 283 mg and maxed-out 411 mg caffeine states"
             width="1200"
             height="675"
             loading="eager"
@@ -90,23 +86,23 @@
       <div class="container project-content__grid">
         <article class="project-content__section">
           <p class="pulsefit-section__eyebrow">Overview</p>
-          <p class="type-body pulsefit-case__lead">MovieMatcher is a lightweight film recommendation app I designed and built for ARTGR 5840. It helps indecisive viewers pick a movie in under a minute by asking three questions about mood, film type, and company, then surfacing a scored match from a curated catalog. I owned the full experience — quiz flow, recommendation engine, watchlist persistence, and responsive UI — using plain HTML, CSS, and JavaScript with no framework dependencies.</p>
+          <p class="type-body pulsefit-case__lead">BuzzLog is a front-end caffeine tracking app I designed and built through vibe coding for ARTGR 5840. It helps anyone see how much caffeine they have logged today by picking a drink category, choosing a specific drink, and confirming a serving size — then watching a daily-limit meter and status emoji update in real time. I owned the full experience — dashboard UI, drink catalog, modal flows, shake interaction, and empty states — using HTML, CSS, JavaScript, and Tailwind with no backend.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Challenge</h2>
-          <p class="challenge-statement">Streaming libraries are overwhelming; most people spend more time browsing than watching.</p>
-          <p class="type-body">I needed a focused prototype that felt personal without requiring accounts or a backend. The constraints were clear: four routes (home, quiz, result, watchlist), a 12-film catalog with real metadata, localStorage for saved films, and a matching algorithm transparent enough to explain in a case study.</p>
+          <p class="challenge-statement">People underestimate how fast caffeine adds up across coffee, tea, soda, and energy drinks.</p>
+          <p class="type-body">I needed a focused prototype that felt playful and clear without accounts or a database. The constraints were clear: front-end only with placeholder data, a 400 mg daily-limit guideline, category → drink → serving logging, and an interaction (shaking status emoji) that communicates intake intensity without cluttering the meter.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Solution</h2>
-          <p class="type-body">I shipped a multi-page static app with a stepped quiz UI, progress tracker, and auto-advance on answer selection. A weighted scoring function ranks films by mood, type, and company tags, returning the top match plus three "you might also like" suggestions. The result page shows poster, rating, genres, and synopsis with save-to-watchlist and try-again actions. The watchlist supports filter tabs (all, to watch, watched), toggle watched status, and summary stats. The home page adds genre browsing and a featured grid sorted by rating.</p>
+          <p class="type-body">I shipped a single-page static app with a dark dashboard card for today’s total, a progress bar against a 400 mg limit, drink count / remaining mg, and four category tiles (Coffee, Tea, Soda, Energy). Tapping a category opens a drink picker from a curated catalog; selecting a drink opens a serving-size step (0.5×–2×) that multiplies base mg before logging. Today’s drinks list shows name, type badge, time, and mg with remove controls, plus an empty state with sample data. A status emoji (😌 → 😊 → 😬 → 💀) sits beside the limit bar and shakes in tiers based on total caffeine — the bar itself stays still.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Process</h2>
-          <p class="type-body">How I moved from problem framing to a shipped prototype — across discovery, design, development, and delivery.</p>
+          <p class="type-body">How I moved from a simple log UI to a polished interactive tracker — across discovery, design, development, and delivery.</p>
           <ol class="pulsefit-stepper" aria-label="Design and development process">
             <li class="pulsefit-stepper__step">
               <span class="pulsefit-stepper__marker" aria-hidden="true">1</span>
@@ -128,80 +124,77 @@
           <div class="pulsefit-process__details">
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Discover</p>
-              <p class="type-body">Scoped four routes, a 12-film catalog with real metadata, localStorage persistence, and a transparent matching algorithm before writing code.</p>
+              <p class="type-body">Scoped a dashboard + drink list + empty state with placeholder data only; no login, database, or backend.</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Design</p>
-              <p class="type-body">Mapped the home-to-quiz-to-result journey, then designed radio options, a three-step progress tracker, and auto-advance on answer selection.</p>
+              <p class="type-body">Defined coffee-shop visuals (cream field, espresso card, pastel category tiles), then refined the meter so only the emoji shakes while the progress bar stays calm.</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Develop</p>
-              <p class="type-body">Built shared modules for movie data, localStorage helpers, and a scoreMovie function with rating tie-breaks; wired the multi-page flow in plain HTML, CSS, and JavaScript.</p>
+              <p class="type-body">Built drink catalogs, two-step modals (choose drink → serving size), serving multipliers, and shake tiers with burst timing tied to mg ranges.</p>
             </div>
             <div class="pulsefit-process__detail">
               <p class="pulsefit-section__eyebrow">Deliver</p>
-              <p class="type-body">Added poster fallbacks, watchlist filter tabs, empty states, and popup confirmations, then deployed the static build to Netlify.</p>
+              <p class="type-body">Tuned emoji stages, empty-state meter reset, and energy-drink category, then prepared the static folder for Netlify drag-and-drop hosting.</p>
             </div>
           </div>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">AI-Assisted Development</h2>
-          <p class="type-body">A look at some of the actual prompts used to build this app with AI assistance.</p>
+          <p class="type-body">A look at some of the actual prompts used to build this app with AI assistance — from the initial tracker shell to jitter interaction, serving sizes, and energy drinks.</p>
 
           <div class="prompt-walkthrough" data-prompt-walkthrough aria-roledescription="carousel" aria-label="Prompt walkthrough">
             <div class="prompt-walkthrough__header">
               <span class="badge badge--accent">Prompt walkthrough</span>
-              <p class="prompt-walkthrough__counter" data-prompt-counter aria-live="polite">1 / 4</p>
+              <p class="prompt-walkthrough__counter" data-prompt-counter aria-live="polite">1 / 5</p>
             </div>
 
             <div class="prompt-walkthrough__viewport">
               <div class="prompt-walkthrough__track" data-prompt-track>
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="false">
-                  <h3 class="prompt-walkthrough__title">Slide 1 — Initializing the multipage structure</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Help me initialize a multipage web application with following blank pages. Do not use any framework. You should only use HTML, css and JS.
-Step 1: Initiate document structure
-Home Page: /
-Quiz Page: /quiz
-Result Page: /result
-Watchlist Page: /watchlist</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 1 — Scaffolding the caffeine tracker UI</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Create a simple web application for users (everyone) to track their caffeine intake by logging the drinks they've had today (coffee, tea, soda). Use HTML/CSS/JS with Tailwind. Include a dashboard, a list of taken drinks with caffeine amount, and an empty state. Use placeholder data only. Focus on the front-end UI; do not add login, database, or backend logic yet.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked as expected. However, the Result page showed as a parallel nav tab. It should only be reached after completing the quiz. This will be addressed in a later prompt.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well on the first try. The app showed with a warm coffee color palette and used 400mg as the daily limit, which matches the general recommended maximum caffeine intake for adults. Caffeine amounts for all three drink types were included. The initial state showed sample drinks rather than a required empty state, but this was acceptable as placeholder data.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 2 — Building the quiz-to-result user flow logic</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please implement a feature that support following user flow:
-Step 3: Generate logics based on user flow
-User Flow 1 — Take the quiz and get a recommended movie
-START: User is on the home page (/). User clicks "Start the quiz" button. System navigates to the quiz page (/quiz). User answers Question 1 (mood). The "Next" button stays disabled until an answer is selected. User answers Question 2 (type), then Question 3 (company), one question at a time. After the last question, user clicks "Find my film". System scores every movie against the three answers and navigates to the result page (/result), showing the best-matching movie with its poster, synopsis, and rating. If satisfied, user stays on result page (END) or continues to save the movie. If not, user clicks "Try again" and returns to the quiz page to restart. END.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 2 — First attempt at the jitter meter</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>The app calculates the total milligrams of caffeine and updates a visual 'jitter meter' that shakes based on the intake. When selecting a drink button, it will pop up and allow the user to choose the types. For example, espresso shot, cold brew, and others.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">No issues found.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Partially worked. Both the jitter meter bar and the emoji were shaking at the same speed all the time, regardless of the caffeine level, which was visually overwhelming. Having two separate bars also felt confusing.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 3 — Refining the quiz interaction</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please make two changes to the quiz page:
-1. Swap the answer options between Question 1 and Question 2. Question 1 "What mood are you in?" should use the options that are currently under Question 2. Question 2 "What type of movie do you want?" should use the options currently under Question 1.
-2. When the user clicks an answer option, move to the next question directly without clicking the Next button. Also add a "Previous" button so the user can go back to the previous question to change their answer. Remove the Next button.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 3 — Refining shake intensity by caffeine stage</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Fix the emoji and shake animation: 1. Make the emoji larger and position it directly to the left of the progress bar, vertically centered with it. 2. Fix the shake intensity stages based on caffeine level: 0–100mg: no animation at all, completely still. 100–200mg: shake once every 4 seconds, gentle and slow. 200–350mg: shake once every 1.5 seconds, moderate intensity. 350mg+: continuous rapid shake. Each shake should be a quick burst, then the emoji stays still until the next shake.</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked well. The options were correctly swapped between the two questions.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Mostly worked. The emoji size and position were fixed. The staged shake intensity was implemented correctly using setInterval. The timing felt slightly too slow, so further adjustment was needed.</p>
                   </div>
                 </article>
 
                 <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
-                  <h3 class="prompt-walkthrough__title">Slide 4 — Adding featured movies and genre filtering</h3>
-                  <pre class="prompt-walkthrough__prompt"><code>Please make two improvements to the home page:
-1. Add a "Featured Movies" section below the genre tags. Show 4-6 movie cards in a grid, each with a poster image (use a colored placeholder with the movie title if no real image is available), movie title, genre tags, and rating.
-2. Make the genre tags clickable. When a user clicks a genre (e.g. "Action"), filter the featured movies section to only show movies matching that genre. Clicking the same genre again deselects it and shows all movies. Highlight the selected genre tag to show it is active.</code></pre>
+                  <h3 class="prompt-walkthrough__title">Slide 4 — Fixing shake timing and the empty-state bug</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Fix shake timing: 100–200mg: shake once every 1.5 seconds, gentle. 200–350mg: shake once every 0.5 seconds, moderate. Fix bug: When 'Show empty state' is toggled, the caffeine meter section must also reset to empty state (0mg, empty progress bar, no shake).</code></pre>
                   <div class="prompt-walkthrough__result">
                     <span class="badge badge--accent">Result</span>
-                    <p class="type-body prompt-walkthrough__result-text">Worked well. Movie cards with posters appeared in a grid layout, and clicking a genre tag correctly filtered the displayed movies. The active genre was highlighted to show the current selection.</p>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. The shake timing now feels appropriate for each stage. The empty state bug was also fixed.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 5 — Adding energy drinks and serving sizes</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Add a 4th drink category card: Energy Drink (with relevant options like Red Bull, Monster, etc. and their caffeine amounts). After selecting a specific drink, show a serving size selector before logging: 0.5x (half), 1x (standard), 1.5x, 2x. Multiply the caffeine mg by the selected multiplier before adding to the total.</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked perfectly. The serving size selector appeared as a step after drink selection and correctly multiplied the caffeine amount before logging.</p>
                   </div>
                 </article>
               </div>
@@ -214,6 +207,7 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
                 <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 5" aria-selected="false"></button>
               </div>
               <button type="button" class="btn btn--secondary" data-prompt-next>Next</button>
             </div>
@@ -222,52 +216,52 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
 
         <article class="project-content__section pulsefit-style-guide">
           <h2 class="type-h2">Style guide</h2>
-          <p class="type-body">MovieMatcher pairs a soft gray page field with white cards and a navy hero gradient. System UI typography keeps the layout light; blue drives primary actions, sky-blue accents the hero eyebrow, and gray pills handle genre tags so posters stay the focal point.</p>
+          <p class="type-body">BuzzLog uses a warm coffee-shop palette — cream page background, dark espresso dashboard card, and soft pastel tiles for Coffee, Tea, Soda, and Energy. DM Sans carries the UI; white list cards and rounded category tiles keep the log easy to scan; the status emoji is the only moving element beside a static daily-limit bar.</p>
 
           <div class="pulsefit-style-guide__panel">
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Color palette</p>
               <ul class="pulsefit-swatches">
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);"></span>
-                  <span class="pulsefit-swatch__label">Navy gradient · hero field</span>
+                  <span class="pulsefit-swatch__chip" style="background: #2d1b14;"></span>
+                  <span class="pulsefit-swatch__label">Espresso · dashboard card</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #0066cc;"></span>
-                  <span class="pulsefit-swatch__label">Blue · primary action</span>
+                  <span class="pulsefit-swatch__chip" style="background: #f9f5f0;"></span>
+                  <span class="pulsefit-swatch__label">Cream · page field</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #a8c7fa;"></span>
-                  <span class="pulsefit-swatch__label">Sky · hero eyebrow</span>
+                  <span class="pulsefit-swatch__chip" style="background: #fef3c7;"></span>
+                  <span class="pulsefit-swatch__label">Amber · coffee tile</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #f5f5f7;"></span>
-                  <span class="pulsefit-swatch__label">Gray · page background</span>
+                  <span class="pulsefit-swatch__chip" style="background: #dcfce7;"></span>
+                  <span class="pulsefit-swatch__label">Mint · tea tile</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #eef0f4;"></span>
-                  <span class="pulsefit-swatch__label">Mist · genre tag</span>
+                  <span class="pulsefit-swatch__chip" style="background: #ffedd5;"></span>
+                  <span class="pulsefit-swatch__label">Peach · soda tile</span>
                 </li>
                 <li class="pulsefit-swatch">
-                  <span class="pulsefit-swatch__chip" style="background: #ffffff; border: 1px solid rgba(42,42,42,0.15);"></span>
-                  <span class="pulsefit-swatch__label">White · card surface</span>
+                  <span class="pulsefit-swatch__chip" style="background: #ede9fe;"></span>
+                  <span class="pulsefit-swatch__label">Violet · energy tile</span>
                 </li>
               </ul>
             </div>
 
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Typography</p>
-              <p class="pulsefit-style-guide__display" style="color: #ffffff;">MovieMatcher</p>
-              <p class="pulsefit-style-guide__heading" style="color: #ffffff;">Section heading · system bold</p>
-              <p class="pulsefit-style-guide__body" style="color: rgba(255,255,255,0.72);">Body copy uses system UI at 16px with comfortable line height for quiz options and film synopses.</p>
+              <p class="pulsefit-style-guide__display" style="color: #ffffff;">BuzzLog</p>
+              <p class="pulsefit-style-guide__heading" style="color: #ffffff;">Section heading · DM Sans</p>
+              <p class="pulsefit-style-guide__body" style="color: rgba(255,255,255,0.72);">Body copy stays readable on cream surfaces; large tabular numbers on the espresso card carry the daily total.</p>
             </div>
 
             <div class="pulsefit-style-guide__group">
               <p class="pulsefit-section__eyebrow">Components</p>
               <div class="pulsefit-style-guide__components">
-                <span class="pulsefit-ui-btn" style="background: #0066cc; color: #ffffff;">Start the quiz</span>
-                <span class="pulsefit-ui-btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.5);">View watchlist</span>
-                <span class="pulsefit-ui-badge" style="background: #eef0f4; color: #444444;">Comedy</span>
+                <span class="pulsefit-ui-btn" style="background: #2d1b14; color: #ffffff;">Log a drink</span>
+                <span class="pulsefit-ui-btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.5);">Serving size</span>
+                <span class="pulsefit-ui-badge" style="background: #fef3c7; color: #78350f;">Coffee</span>
               </div>
             </div>
           </div>
@@ -275,55 +269,48 @@ START: User is on the home page (/). User clicks "Start the quiz" button. System
 
         <article class="project-content__section">
           <h2 class="type-h2">Gallery</h2>
-          <p class="type-body">Four screens trace the core journey — home discovery, quiz, personalized result, and watchlist management.</p>
+          <p class="type-body">Four screens trace the core journey — dashboard under and over the limit, serving-size selection, and the coffee drink catalog.</p>
           <div class="pulsefit-gallery pulsefit-gallery--screenshots pulsefit-gallery--framed">
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge home screenshot">
-                <img src="assets/screenshot1_moviematcher.png" alt="MovieMatcher home page with navy hero, Start the quiz CTA, genre tags, and featured movie posters" width="1440" height="1200" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge dashboard under-limit screenshot">
+                <img src="assets/screenshot1_buzzlog.png" alt="BuzzLog dashboard showing 283 mg caffeine, progress bar at 71 percent, four drink categories, and today's drinks list" width="1318" height="1938" loading="lazy">
               </button>
-              <figcaption class="type-caption">Home — hero CTA, genre browse, and featured films from the catalog</figcaption>
+              <figcaption class="type-caption">Dashboard — today’s total, daily-limit meter, category tiles, and drink log</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge quiz screenshot">
-                <img src="assets/screenshot2_moviematcher.png" alt="MovieMatcher quiz on the Type step asking what type of movie you want, with Thoughtful and reflective selected" width="1440" height="900" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge over-limit dashboard screenshot">
+                <img src="assets/screenshot2_buzzlog.png" alt="BuzzLog dashboard at 411 mg with maxed-out progress bar and skull status emoji" width="1318" height="1938" loading="lazy">
               </button>
-              <figcaption class="type-caption">Quiz — Mood / Type / Company stepper with selectable answer cards and Previous</figcaption>
+              <figcaption class="type-caption">Over limit — maxed meter, 0 mg remaining, and wired status feedback</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge result screenshot">
-                <img src="assets/screenshot3_moviematcher.png" alt="MovieMatcher result page showing Get Out as Your Match with Save to watchlist, Try again, and related picks" width="1440" height="1200" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge serving size screenshot">
+                <img src="assets/screenshot3_buzzlog.png" alt="BuzzLog serving size modal for Espresso Shot with half, standard, large, and double options" width="1318" height="1938" loading="lazy">
               </button>
-              <figcaption class="type-caption">Result — top match with poster, synopsis, save actions, and related suggestions</figcaption>
+              <figcaption class="type-caption">Serving size — 0.5× to 2× multipliers applied to base caffeine mg</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <button type="button" class="lightbox-trigger" aria-label="Enlarge watchlist screenshot">
-                <img src="assets/screenshot4_moviematcher.png" alt="MovieMatcher My Watchlist with All To watch Watched filters, four saved films, and summary stats" width="1440" height="1000" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge choose coffee screenshot">
+                <img src="assets/screenshot4_buzzlog.png" alt="BuzzLog Choose coffee modal listing Espresso Shot, Double Espresso, Drip Coffee, Americano, Cold Brew, and Latte with mg values" width="1318" height="1938" loading="lazy">
               </button>
-              <figcaption class="type-caption">Watchlist — filter tabs, saved films with status actions, and total / watched / remaining stats</figcaption>
+              <figcaption class="type-caption">Choose coffee — curated variants with caffeine amounts before serving size</figcaption>
             </figure>
           </div>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Outcomes</h2>
-          <p class="type-body">MovieMatcher demonstrates end-to-end interaction design with a real recommendation engine and persistent client-side state. The app runs from any static file server, loads in under a second, and degrades gracefully when poster URLs are unavailable.</p>
+          <p class="type-body">BuzzLog demonstrates end-to-end interaction design for a habit-logging flow with a real drink catalog, serving math, and feedback that scales with intake. The app runs from any static file server (Tailwind via CDN), needs no build step, and ships with empty and sample states for demos.</p>
         </article>
 
         <article class="project-content__section">
           <h2 class="type-h2">Reflection</h2>
-          <p class="type-body">Building MovieMatcher solo forced clear scope decisions early — a 12-film catalog and three quiz questions kept the matching logic explainable and the case study honest. Auto-advancing the quiz reduced friction without hiding progress, which worked well for a “pick something tonight” use case. Next time I would connect a live catalog via TMDB, surface streaming availability on the result page, and add shareable result cards so recommendations can leave the browser. The main takeaway: a constrained prototype with transparent scoring taught more about product judgment than a larger feature set would have.</p>
+          <p class="type-body">Vibe coding BuzzLog worked best when prompts stayed specific — shake tiers, emoji mapping, and the serving-size step were easier to iterate than vague “make it nicer” requests. Merging the jitter meter into a single progress bar with an emoji-only shake kept the dashboard readable while still feeling playful. Next time I would persist logs in localStorage, let users set a custom daily limit, and add a simple day history so the prototype can survive a refresh. The main takeaway: playful motion earns its place when it clarifies state instead of competing with the numbers.</p>
         </article>
 
-        <article class="project-content__section pulsefit-case__deploy pulsefit-case__cta">
+        <article class="project-content__section pulsefit-case__deploy">
           <h2 class="type-h2">Deployment</h2>
-          <p class="type-body">The app is a static multi-page site built with plain HTML, CSS, and JavaScript — no build step or backend required. Deployed at <a href="https://moviefilmmatcher.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">moviefilmmatcher.netlify.app</a>.</p>
-          <div class="pulsefit-case__cta-panel">
-            <p class="pulsefit-case__cta-title">Try it yourself</p>
-            <p class="type-body">Open the live prototype to walk through the quiz, get a match, and save films to your watchlist — no account required.</p>
-            <div class="pulsefit-case__deploy-actions">
-              <a href="https://moviefilmmatcher.netlify.app/" class="btn btn--primary btn--lg pulsefit-case__cta-btn" target="_blank" rel="noopener noreferrer">View live app →</a>
-            </div>
-          </div>
+          <p class="type-body">The app is a static single-page site built with HTML, CSS, JavaScript, and Tailwind CDN — no build step or backend required. Publish the project folder to Netlify with <code>index.html</code> at the root (drag-and-drop works). Live URL can be wired here once hosted.</p>
         </article>
 
         <nav class="pulsefit-project-nav" aria-label="Project navigation">

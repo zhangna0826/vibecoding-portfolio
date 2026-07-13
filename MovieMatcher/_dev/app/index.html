@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatcher — Home</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/quiz/">Quiz</a>
+      <a href="/watchlist/">Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sectionHero" class="hero">
+      <p class="hero__eyebrow">Your personal movie matcher</p>
+      <h1>Find the perfect film for tonight</h1>
+      <p class="hero__intro">
+        MovieMatcher asks three quick questions about your mood, taste, and company —
+        then recommends a film you'll actually want to watch.
+      </p>
+      <div class="hero__actions">
+        <a href="/quiz/" class="btn btn--primary">Start the quiz</a>
+        <a href="/watchlist/" class="btn btn--secondary">View my watchlist</a>
+      </div>
+    </section>
+
+    <section id="sectionGenres" class="genres">
+      <h2>Browse by genre</h2>
+      <p class="genres__subtitle">Popular categories to explore</p>
+      <div id="genreTags" class="tag-list"></div>
+    </section>
+
+    <section id="sectionFeaturedMovies" class="featured">
+      <h2>Featured Movies</h2>
+      <p id="featuredSubtitle" class="featured__subtitle">Top picks from our catalog</p>
+      <div id="featuredMoviesGrid" class="featured-grid"></div>
+      <p id="featuredEmpty" class="featured-empty" hidden>No featured movies match this genre.</p>
+    </section>
+  </main>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

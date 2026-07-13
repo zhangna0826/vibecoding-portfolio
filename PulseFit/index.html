@@ -88,24 +88,26 @@
 
     <section class="project-content" aria-label="Case study details">
       <div class="container project-content__grid">
-        <article class="card">
+        <article class="project-content__section">
           <p class="pulsefit-section__eyebrow">Overview</p>
           <p class="type-body pulsefit-case__lead">PulseFit is a mobile-first fitness planner I designed and built for ARTGR 5840's final project. The app helps lifters plan weekly routines, log sets and reps during live workouts, and track strength progress over time. I owned the full stack — product flows, dark-theme UI system, React front end, and Supabase data layer — with a seeded demo mode so the experience works without a live backend.</p>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Challenge</h2>
+          <p class="challenge-statement">Planning and logging shouldn't require digging through cluttered menus.</p>
           <p class="type-body">Generic fitness apps often bury planning and logging under cluttered navigation. I needed a focused phone-native experience that could still support real user accounts, persistent plans, and meaningful progress data. The constraints were tight: every screen had to follow a strict DESIGN.md (neon yellow on charcoal, one primary CTA per view, 390×844 phone viewport), ship across eight core routes, and remain usable in demo mode when Supabase credentials aren't configured.</p>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Solution</h2>
           <p class="type-body">I shipped a React + TypeScript app with eight routes — home, plans, plan editor, live session, progress, history, settings, and auth — wrapped in a phone shell with a fixed tab bar. Users create multi-day workout plans with muscle-group assignments and exercise catalogs, activate plans to populate a weekly overview, then start sessions from a card-deck UI that supports swipe navigation, weight/rep logging, and inline exercise guides. Progress and history surfaces pull from logged sessions to show PR badges, Recharts strength trends, and expandable session detail. A centralized mock dataset seeds realistic demo data on first sign-in so reviewers can explore the full flow immediately.</p>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Process</h2>
-          <ol class="pulsefit-stepper" aria-label="Project process steps">
+          <p class="type-body">How I moved from design tokens to a working product — across system setup, flow mapping, component build, and data integration.</p>
+          <ol class="pulsefit-stepper" aria-label="Design and development process">
             <li class="pulsefit-stepper__step">
               <span class="pulsefit-stepper__marker" aria-hidden="true">1</span>
               <span class="pulsefit-stepper__label">Design System</span>
@@ -123,10 +125,130 @@
               <span class="pulsefit-stepper__label">Data Layer</span>
             </li>
           </ol>
-          <p class="type-body">I started from PLAN.md user flows and wired blank pages with React Router, Radix UI, Tailwind CSS, and Framer Motion. The design system came first — semantic tokens in tokens.css, component rules in styles.css, and a reference screen to validate every state before building features. I layered Supabase auth and Postgres tables for plans, sessions, and profiles, then added a demoStore fallback that mirrors the same data shape when VITE_USE_MOCK_DATA is enabled. Session logging received the most iteration: the exercise card deck uses a fan-stack layout with swipe gestures, onboarding tips for form guides, and smart defaults from the user's last logged set. Notifications, unit preferences (lbs/kg), and profile settings rounded out the experience.</p>
+          <div class="pulsefit-process__details">
+            <div class="pulsefit-process__detail">
+              <p class="pulsefit-section__eyebrow">Design System</p>
+              <p class="type-body">Established semantic tokens in tokens.css, component rules in styles.css, and DESIGN.md constraints; validated every interactive state on a reference screen before building features.</p>
+            </div>
+            <div class="pulsefit-process__detail">
+              <p class="pulsefit-section__eyebrow">User Flows</p>
+              <p class="type-body">Translated PLAN.md into eight routes — plan, log, track, and configure — with wireframes for home, plans, session logging, progress, and settings.</p>
+            </div>
+            <div class="pulsefit-process__detail">
+              <p class="pulsefit-section__eyebrow">Component Build</p>
+              <p class="type-body">Wired blank pages with React Router, Radix UI, Tailwind CSS, and Framer Motion; iterated most on the swipe-based session card deck with weight/rep logging and inline exercise guides.</p>
+            </div>
+            <div class="pulsefit-process__detail">
+              <p class="pulsefit-section__eyebrow">Data Layer</p>
+              <p class="type-body">Connected Supabase auth and Postgres tables for plans, sessions, and profiles, then added a demoStore fallback that mirrors the same data shape when VITE_USE_MOCK_DATA is enabled.</p>
+            </div>
+          </div>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
+          <h2 class="type-h2">AI-Assisted Development</h2>
+          <p class="type-body">A look at some of the actual prompts used to build this app with AI assistance.</p>
+
+          <div class="prompt-walkthrough" data-prompt-walkthrough aria-roledescription="carousel" aria-label="Prompt walkthrough">
+            <div class="prompt-walkthrough__header">
+              <span class="badge badge--accent">Prompt walkthrough</span>
+              <p class="prompt-walkthrough__counter" data-prompt-counter aria-live="polite">1 / 8</p>
+            </div>
+
+            <div class="prompt-walkthrough__viewport">
+              <div class="prompt-walkthrough__track" data-prompt-track>
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="false">
+                  <h3 class="prompt-walkthrough__title">Slide 1 — Refining the plan preview flow</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Add a button of Preview. Remove the buttons of edit and delete. When the user preview the plans, then they can edit or delete</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked as intended. Users now preview a plan first, then choose to edit or delete from there, instead of having those actions exposed directly on the list.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 2 — Making the home dashboard interactive</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Make weekly overview interactive, clickable. For example, when i click M or T, it will show the detailed sessions below</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. Clicking a day in the weekly overview now expands to show that day's detailed sessions below, making the dashboard feel more explorable instead of static.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 3 — Setting Workout as the default start page</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>move the workwork in the middle, and make it as default start page when the user opens the app</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked as intended — the Workout tab was reordered to the center of the tab bar and set as the app's default route, replacing Home as the entry point so users land directly on today's session.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 4 — Fixing set-counting logic</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Set 12 of 3 doesn't make sense. Once the user finishes the last set of the exercise, the app should stop counting and auto move to the next exercise, not just keep letting them log set 4, 5, 12...</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Fixed. Set counting now stops at the target and auto-advances to the next exercise instead of letting the count climb indefinitely.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 5 — Designing a swipeable exercise card stack</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Turn each exercise to one card, listed like a fan of playing cards. You can see slivers of the next few cards behind this one. Swipe left/right to move between exercises</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. Exercises now render as a card stack with the next few cards peeking out behind the current one, and swiping moves between them.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 6 — Replacing a confusing progress chart</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>This section is confusing. Does it mean 6–13 had the best record? But why show it as an unnecessary bar? Consider it again, then change it to a more visible method.</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. Replaced the ambiguous bar chart with a clearer StrengthTrend component that shows PR history in a way that's actually easy to read at a glance.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 7 — Organizing session history by time</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>Keep past sessions as a list, but group it by time instead of one long scroll. For example, collapsible sections 'This week,' 'Last week,' 'Jun 8–14,'. That means you can filter it</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Worked well. Past sessions are now grouped into collapsible time-based sections instead of one continuous scroll, making history much easier to navigate.</p>
+                  </div>
+                </article>
+
+                <article class="prompt-walkthrough__slide" data-prompt-slide aria-hidden="true" hidden>
+                  <h3 class="prompt-walkthrough__title">Slide 8 — Preparing consistent demo data for grading</h3>
+                  <pre class="prompt-walkthrough__prompt"><code>When other user open/test this website, they should create and log in an account. Plz make sure they have and can see the same prebuilt data as me, as pages now show. Since the instructor will test and grade this app</code></pre>
+                  <div class="prompt-walkthrough__result">
+                    <span class="badge badge--accent">Result</span>
+                    <p class="type-body prompt-walkthrough__result-text">Implemented. Any new account now loads the same prebuilt demo data (plans, sessions, PRs) so the app looks and functions consistently for graders regardless of who logs in.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="prompt-walkthrough__controls">
+              <button type="button" class="btn btn--secondary" data-prompt-prev disabled>Prev</button>
+              <div class="prompt-walkthrough__dots" data-prompt-dots role="tablist" aria-label="Prompt slides">
+                <button type="button" class="prompt-walkthrough__dot is-active" data-prompt-dot role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 5" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 6" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 7" aria-selected="false"></button>
+                <button type="button" class="prompt-walkthrough__dot" data-prompt-dot role="tab" aria-label="Go to slide 8" aria-selected="false"></button>
+              </div>
+              <button type="button" class="btn btn--secondary" data-prompt-next>Next</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-content__section">
           <h2 class="type-h2">Sketching</h2>
           <p class="type-body">Early wireframes explored homepage layouts, plan management, multi-step plan creation, and the live session logging flow. Starred variants became the baseline for high-fidelity screens.</p>
           <div class="pulsefit-media-grid pulsefit-media-grid--2">
@@ -141,25 +263,127 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Information architecture</h2>
-          <p class="type-body">Eight routes map to distinct jobs — plan, log, track, and configure — with shared navigation between Home, Plans, and History. Each page section maps to a stable DOM anchor for testing and AI-assisted generation.</p>
-          <figure class="pulsefit-case__figure">
-            <img src="assets/Web%20structure.png" alt="PulseFit web structure document listing routes, sections, and primary actions for all eight app pages" width="900" height="600" loading="lazy">
-            <figcaption class="type-caption">Route map and section inventory from PLAN.md</figcaption>
+          <p class="type-body">PulseFit is organized around four jobs — plan, log, track, and configure — so lifters always know where to go next. Home is the hub: start today's session, scan the week, and jump into plans, progress, or history from there. Secondary screens nest under those jobs (for example, creating or editing a plan lives under My Plans) instead of competing in a flat menu.</p>
+
+          <figure class="sitemap" aria-labelledby="sitemap-caption">
+            <div class="sitemap__canvas" role="img" aria-label="PulseFit site map. Home page branches to My Plans, Workout Session, Progress, History, Settings, and Auth. My Plans leads to Create or Edit Plan. Each page lists its key sections.">
+              <div class="sitemap__root">
+                <div class="sitemap__node sitemap__node--page sitemap__node--root">
+                  <span class="sitemap__node-label">Home</span>
+                  <span class="sitemap__node-path">/</span>
+                </div>
+                <div class="sitemap__home-sections" aria-label="Home page sections">
+                  <div class="sitemap__node sitemap__node--section">Today's workout</div>
+                  <div class="sitemap__node sitemap__node--section">Weekly overview</div>
+                  <div class="sitemap__node sitemap__node--section">Quick stats</div>
+                </div>
+              </div>
+
+              <div class="sitemap__connector sitemap__connector--down" aria-hidden="true"></div>
+
+              <div class="sitemap__row">
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">My Plans</span>
+                    <span class="sitemap__node-path">/plans</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Plan list</div>
+                    <div class="sitemap__node sitemap__node--page sitemap__node--nested">
+                      <span class="sitemap__node-label">Create / Edit Plan</span>
+                      <span class="sitemap__node-path">/plans/edit</span>
+                    </div>
+                    <div class="sitemap__node sitemap__node--section">Day &amp; muscle groups</div>
+                    <div class="sitemap__node sitemap__node--section">Exercise list</div>
+                  </div>
+                </div>
+
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">Workout Session</span>
+                    <span class="sitemap__node-path">/session</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Current exercise</div>
+                    <div class="sitemap__node sitemap__node--section">Set / rep / weight</div>
+                    <div class="sitemap__node sitemap__node--section">Session progress</div>
+                  </div>
+                </div>
+
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">Progress</span>
+                    <span class="sitemap__node-path">/progress</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Exercise selector</div>
+                    <div class="sitemap__node sitemap__node--section">PR badge &amp; chart</div>
+                    <div class="sitemap__node sitemap__node--section">Time range filter</div>
+                  </div>
+                </div>
+
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">History</span>
+                    <span class="sitemap__node-path">/history</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Past sessions</div>
+                    <div class="sitemap__node sitemap__node--section">Session detail</div>
+                  </div>
+                </div>
+
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">Settings</span>
+                    <span class="sitemap__node-path">/settings</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Profile</div>
+                    <div class="sitemap__node sitemap__node--section">Units (lbs / kg)</div>
+                    <div class="sitemap__node sitemap__node--section">Notifications</div>
+                  </div>
+                </div>
+
+                <div class="sitemap__branch">
+                  <div class="sitemap__node sitemap__node--page">
+                    <span class="sitemap__node-label">Auth</span>
+                    <span class="sitemap__node-path">/auth</span>
+                  </div>
+                  <div class="sitemap__node-stack">
+                    <div class="sitemap__node sitemap__node--section">Sign in / Sign up</div>
+                    <div class="sitemap__node sitemap__node--section">Demo mode entry</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="sitemap__legend" aria-label="Site map legend">
+              <li class="sitemap__legend-item">
+                <span class="sitemap__legend-swatch sitemap__legend-swatch--page" aria-hidden="true"></span>
+                <span>Solid box = full page / route</span>
+              </li>
+              <li class="sitemap__legend-item">
+                <span class="sitemap__legend-swatch sitemap__legend-swatch--section" aria-hidden="true"></span>
+                <span>Dashed box = section or sub-page content</span>
+              </li>
+            </ul>
+            <figcaption class="type-caption" id="sitemap-caption">Site map of PulseFit's eight routes and key page sections</figcaption>
           </figure>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Visual development</h2>
           <p class="type-body">Mood-board research balanced high-energy fitness UI references with a restrained dark palette. Neon yellow became the primary action color; orange handles secondary emphasis and count badges without competing with the main CTA.</p>
-          <figure class="pulsefit-case__figure">
+          <figure class="pulsefit-case__figure pulsefit-case__figure--70">
             <img src="assets/moodboard.png" alt="PulseFit mood board with fitness app references, color palettes, typography, and UI inspiration" width="900" height="600" loading="lazy">
             <figcaption class="type-caption">Reference apps, palette exploration, and type direction</figcaption>
           </figure>
         </article>
 
-        <article class="card pulsefit-style-guide">
+        <article class="project-content__section pulsefit-style-guide">
           <h2 class="type-h2">Style guide</h2>
           <p class="type-body">PulseFit uses a dark-theme token system — charcoal surfaces, neon yellow primary actions, and Public Sans across all text. Components share one radius and a border-plus-shadow elevation model.</p>
 
@@ -204,48 +428,68 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Gallery</h2>
           <p class="type-body">Six high-fidelity screens trace the core experience — from today's plan on the home dashboard through live logging, exercise guides, plan management, and session history.</p>
-          <div class="pulsefit-gallery pulsefit-gallery--screenshots">
+          <div class="pulsefit-gallery pulsefit-gallery--screenshots pulsefit-gallery--row">
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot1_pulsefit.png" alt="PulseFit home dashboard with today's push and pull workouts, stats, and weekly overview" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge home dashboard screenshot">
+                <img src="assets/screenshot1_pulsefit.png" alt="PulseFit home dashboard with today's push and pull workouts, stats, and weekly overview" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">Home — today's workout cards, quick stats, and weekly plan overview</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot2_pulsefit.png" alt="PulseFit live workout session logging bench press sets with reps and weight inputs" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge session logging screenshot">
+                <img src="assets/screenshot2_pulsefit.png" alt="PulseFit live workout session logging bench press sets with reps and weight inputs" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">Session — swipeable exercise deck with set logging and progress tracking</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot3_pulsefit.png" alt="PulseFit exercise guide dialog for barbell row with muscle diagram and form cues" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge exercise guide screenshot">
+                <img src="assets/screenshot3_pulsefit.png" alt="PulseFit exercise guide dialog for barbell row with muscle diagram and form cues" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">Exercise guide — inline form instructions with muscle-group diagram</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot4_pulsefit.png" alt="PulseFit My Plans page listing upper lower and PPL split routines" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge My Plans screenshot">
+                <img src="assets/screenshot4_pulsefit.png" alt="PulseFit My Plans page listing upper lower and PPL split routines" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">My Plans — saved routines with day-by-day exercise previews</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot5_pulsefit.png" alt="PulseFit plan preview showing push day schedule and bench press exercise detail" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge plan preview screenshot">
+                <img src="assets/screenshot5_pulsefit.png" alt="PulseFit plan preview showing push day schedule and bench press exercise detail" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">Plan preview — training-day breakdown with exercise detail modal</figcaption>
             </figure>
             <figure class="pulsefit-case__figure pulsefit-gallery__item">
-              <img src="assets/screenshot6_pulsefit.png" alt="PulseFit history page with streak stats, session filters, and past workout log" width="390" height="844" loading="lazy">
+              <button type="button" class="lightbox-trigger" aria-label="Enlarge history screenshot">
+                <img src="assets/screenshot6_pulsefit.png" alt="PulseFit history page with streak stats, session filters, and past workout log" width="390" height="844" loading="lazy">
+              </button>
               <figcaption class="type-caption">History — streak metrics, time-range filters, and PR-highlighted session log</figcaption>
             </figure>
           </div>
         </article>
 
-        <article class="card">
+        <article class="project-content__section">
           <h2 class="type-h2">Outcomes</h2>
-          <p class="type-body">PulseFit demonstrates end-to-end product thinking — from structured design tokens and mobile interaction patterns to a working data model with 33 seeded exercises and 12 sessions of history. The app runs in dev with npm run dev, builds cleanly for deployment, and degrades gracefully to demo mode without backend setup. Key learnings: keeping one primary yellow CTA per screen improved scanability on dark surfaces, and matching mock data schemas to Supabase tables made the auth-to-demo transition seamless. Next steps would include rest-timer support, social sharing of PRs, and offline session caching.</p>
+          <p class="type-body">PulseFit demonstrates end-to-end product thinking — from structured design tokens and mobile interaction patterns to a working data model with 33 seeded exercises and 12 sessions of history. The app runs in dev with npm run dev, builds cleanly for deployment, and degrades gracefully to demo mode without backend setup.</p>
         </article>
 
-        <article class="card pulsefit-case__deploy">
+        <article class="project-content__section">
+          <h2 class="type-h2">Reflection</h2>
+          <p class="type-body">Keeping one primary yellow CTA per screen improved scanability on dark surfaces more than I expected — it forced hard choices about what each view was for. Matching mock data schemas to Supabase tables from the start made the auth-to-demo transition seamless, which saved hours during stakeholder demos. Next time I would add rest-timer support between sets, social sharing of PRs, and offline session caching so logging survives spotty gym Wi‑Fi. The main takeaway: a seeded demoStore that mirrors production schemas is worth building on day one, not as an afterthought.</p>
+        </article>
+
+        <article class="project-content__section pulsefit-case__deploy pulsefit-case__cta">
           <h2 class="type-h2">Deployment</h2>
           <p class="type-body">The app builds with Vite for static hosting and connects to Supabase when credentials are configured. Demo mode ships with seeded plans, sessions, and a 33-exercise catalog so reviewers can explore every route without setup. Deployed at <a href="https://pulsefit-planner.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">pulsefit-planner.netlify.app</a>.</p>
-          <div class="pulsefit-case__deploy-actions">
-            <a href="https://pulsefit-planner.netlify.app/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">View live app →</a>
-            <a href="#" class="btn btn--secondary btn--lg">View source code →</a>
+          <div class="pulsefit-case__cta-panel">
+            <p class="pulsefit-case__cta-title">Try it yourself</p>
+            <p class="type-body">Open the live prototype to plan workouts, log a live session, and review strength progress — demo mode works without any backend setup.</p>
+            <div class="pulsefit-case__deploy-actions">
+              <a href="https://pulsefit-planner.netlify.app/" class="btn btn--primary btn--lg pulsefit-case__cta-btn" target="_blank" rel="noopener noreferrer">View live app →</a>
+            </div>
           </div>
         </article>
 
@@ -269,14 +513,13 @@
           Open to collaborations on design systems, creative development, and AI-assisted product work.
           Reach out to discuss your next project.
         </p>
-        <a href="mailto:hello@example.com" class="btn btn--primary">Send an email</a>
+        <a href="mailto:zhangna@iastate.edu" class="btn btn--primary">Send an email</a>
       </div>
 
       <div class="footer__links">
-        <a href="#" class="footer__link">GitHub</a>
-        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="https://github.com/zhangna0826" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="#" class="footer__link">Behance</a>
-        <a href="mailto:hello@example.com" class="footer__link">hello@example.com</a>
+        <a href="mailto:zhangna@iastate.edu" class="footer__link">zhangna@iastate.edu</a>
       </div>
 
       <div class="footer__bottom">
@@ -286,10 +529,20 @@
     </div>
   </footer>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close screenshot">×</button>
+      <img class="lightbox__image" id="lightbox-image" src="" alt="">
+    </div>
+  </div>
+
   <script>
     const toggle = document.getElementById("nav-toggle");
     const menu = document.getElementById("nav-menu");
     const overlay = document.getElementById("nav-overlay");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
 
     function closeMenu() {
       menu.classList.remove("is-open");
@@ -307,6 +560,28 @@
       toggle.setAttribute("aria-label", "Close menu");
     }
 
+    function isLightboxOpen() {
+      return lightbox.classList.contains("is-open");
+    }
+
+    function openLightbox(img) {
+      lightboxImage.src = img.getAttribute("src");
+      lightboxImage.alt = img.alt || "";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      lightbox.querySelector(".lightbox__close").focus();
+    }
+
+    function closeLightbox() {
+      if (!isLightboxOpen()) return;
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+      document.body.style.overflow = "";
+    }
+
     toggle.addEventListener("click", () => {
       const isOpen = menu.classList.contains("is-open");
       isOpen ? closeMenu() : openMenu();
@@ -318,9 +593,73 @@
       link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
+    document.querySelectorAll(".lightbox-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        const img = trigger.querySelector("img");
+        if (img) openLightbox(img);
+      });
     });
+
+    lightbox.querySelectorAll("[data-lightbox-close]").forEach((el) => {
+      el.addEventListener("click", closeLightbox);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        if (isLightboxOpen()) {
+          closeLightbox();
+          return;
+        }
+        closeMenu();
+      }
+    });
+
+    (function initPromptWalkthrough() {
+      const root = document.querySelector("[data-prompt-walkthrough]");
+      if (!root) return;
+
+      const slides = Array.from(root.querySelectorAll("[data-prompt-slide]"));
+      const dots = Array.from(root.querySelectorAll("[data-prompt-dot]"));
+      const counter = root.querySelector("[data-prompt-counter]");
+      const prevBtn = root.querySelector("[data-prompt-prev]");
+      const nextBtn = root.querySelector("[data-prompt-next]");
+      let index = 0;
+
+      function showSlide(nextIndex) {
+        index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+
+        slides.forEach((slide, i) => {
+          const active = i === index;
+          slide.hidden = !active;
+          slide.setAttribute("aria-hidden", String(!active));
+        });
+
+        dots.forEach((dot, i) => {
+          const active = i === index;
+          dot.classList.toggle("is-active", active);
+          dot.setAttribute("aria-selected", String(active));
+        });
+
+        if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => showSlide(index - 1));
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => showSlide(index + 1));
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showSlide(i));
+      });
+
+      showSlide(0);
+    })();
   </script>
 </body>
 </html>

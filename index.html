@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio showcasing vibe coding projects — creative development with AI-assisted workflows.">
   <title>Vibe Coding Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -86,33 +89,8 @@
         </header>
 
         <div class="projects__grid">
-          <article class="project-card">
-            <div class="project-card__media">
-              <img
-                class="project-card__image"
-                src="MovieMatcher/assets/cover_moviematcher.png"
-                alt="MovieMatcher home screen with hero, genre tags, and featured movie grid"
-                width="640"
-                height="400"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__meta">
-                <span class="badge badge--accent">Prototyping</span>
-                <span class="badge">2026</span>
-              </div>
-              <h3 class="project-card__title type-h2">MovieMatcher</h3>
-              <p class="project-card__desc type-body">
-                Built a vanilla JavaScript web app with a three-step quiz, weighted matching algorithm, personalized results, and localStorage watchlist — designed for quick "what should I watch tonight?" decisions.
-              </p>
-              <div class="project-card__links">
-                <a href="MovieMatcher/index.html" class="project-card__link">View case study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
+          <article class="project-card project-card--linked">
+            <a href="PulseFit/index.html" class="project-card__cover-link" aria-labelledby="project-card-pulsefit"></a>
             <div class="project-card__media">
               <img
                 class="project-card__image"
@@ -125,10 +103,12 @@
             </div>
             <div class="project-card__body">
               <div class="project-card__meta">
-                <span class="badge badge--accent">Prototyping</span>
-                <span class="badge">2026</span>
+                <span class="badge badge--accent">Vibe Coding</span>
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Supabase</span>
               </div>
-              <h3 class="project-card__title type-h2">PulseFit</h3>
+              <h3 class="project-card__title type-h2" id="project-card-pulsefit">PulseFit</h3>
               <p class="project-card__desc type-body">
                 Built a dark-theme React app for workout planning, swipe-based session logging, PR tracking, and history — powered by a token-driven design system and Supabase backend.
               </p>
@@ -139,71 +119,91 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-card--linked">
+            <a href="Blossom/index.html" class="project-card__cover-link" aria-labelledby="project-card-blossom"></a>
             <div class="project-card__media">
-              <div class="project-card__image project-card__image--gradient-1" role="img" aria-label="Design system mood board project preview"></div>
+              <img
+                class="project-card__image"
+                src="Blossom/assets/cover_blossom.png"
+                alt="Blossom home screen with Needs watering today priority card and My plants grid"
+                width="640"
+                height="400"
+                loading="lazy"
+              />
             </div>
             <div class="project-card__body">
               <div class="project-card__meta">
-                <span class="badge badge--accent">Design systems</span>
-                <span class="badge">2026</span>
+                <span class="badge badge--accent">Vibe Coding</span>
+                <span class="badge">React</span>
+                <span class="badge">DESIGN.md</span>
               </div>
-              <h3 class="project-card__title type-h2">Mood board to tokens</h3>
+              <h3 class="project-card__title type-h2" id="project-card-blossom">Blossom</h3>
               <p class="project-card__desc type-body">
-                Extracted visual patterns from a graphic design proposal into a full token system, component specs, and DESIGN.md for AI-generated UI.
+                Built a mobile plant watering app with priority care cards, live countdowns, Healthy / Soon / Water today badges, and an Add Plant flow with species templates — React, Vite, Tailwind, and a DESIGN.md token system.
               </p>
-              <a href="#" class="project-card__link">View case study →</a>
+              <div class="project-card__links">
+                <a href="Blossom/index.html" class="project-card__link">View case study →</a>
+                <a href="https://initialize-plant-watering-dashboard.vercel.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">Live app →</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-card--linked">
+            <a href="MovieMatcher/index.html" class="project-card__cover-link" aria-labelledby="project-card-moviematcher"></a>
             <div class="project-card__media">
-              <div class="project-card__image project-card__image--gradient-2" role="img" aria-label="Generative interface project preview"></div>
+              <img
+                class="project-card__image"
+                src="MovieMatcher/assets/cover_moviematcher.png"
+                alt="MovieMatcher home screen with hero, genre tags, and featured movie grid"
+                width="640"
+                height="400"
+                loading="lazy"
+              />
             </div>
             <div class="project-card__body">
               <div class="project-card__meta">
-                <span class="badge badge--accent">Generative UI</span>
-                <span class="badge">2026</span>
+                <span class="badge badge--accent">Vibe Coding</span>
+                <span class="badge">Vanilla JS</span>
+                <span class="badge">Matching Algorithm</span>
+                <span class="badge">localStorage</span>
               </div>
-              <h3 class="project-card__title type-h2">Prompt-driven screens</h3>
+              <h3 class="project-card__title type-h2" id="project-card-moviematcher">MovieMatcher</h3>
               <p class="project-card__desc type-body">
-                Built repeatable interface screens from a structured design guide — testing how precisely AI can follow color mapping, spacing, and component rules.
+                Built a vanilla JavaScript web app with a three-step quiz, weighted matching algorithm, personalized results, and localStorage watchlist — designed for quick "what should I watch tonight?" decisions.
               </p>
-              <a href="#" class="project-card__link">View case study →</a>
+              <div class="project-card__links">
+                <a href="MovieMatcher/index.html" class="project-card__link">View case study →</a>
+                <a href="https://moviefilmmatcher.netlify.app/" class="project-card__link" target="_blank" rel="noopener noreferrer">Live app →</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-card--linked">
+            <a href="BuzzLog/index.html" class="project-card__cover-link" aria-labelledby="project-card-buzzlog"></a>
             <div class="project-card__media">
-              <div class="project-card__image project-card__image--gradient-3" role="img" aria-label="Interactive prototype project preview"></div>
+              <img
+                class="project-card__image"
+                src="BuzzLog/assets/cover_buzzlog.png"
+                alt="BuzzLog hero with How wired are you branding and dual phone mockups of jittery vs maxed-out caffeine states"
+                width="640"
+                height="400"
+                loading="lazy"
+              />
             </div>
             <div class="project-card__body">
               <div class="project-card__meta">
-                <span class="badge badge--accent">Prototyping</span>
-                <span class="badge">2026</span>
+                <span class="badge badge--accent">Vibe Coding</span>
+                <span class="badge">Tailwind</span>
+                <span class="badge">Vanilla JS</span>
+                <span class="badge">Interaction</span>
               </div>
-              <h3 class="project-card__title type-h2">Split-layout portfolio</h3>
+              <h3 class="project-card__title type-h2" id="project-card-buzzlog">BuzzLog</h3>
               <p class="project-card__desc type-body">
-                A responsive home page using the 40/60 color/content split, interactive project cards, and a sticky navigation bar aligned to the design system.
+                Built a front-end caffeine tracker with category pickers, drink catalogs, serving multipliers, and a daily-limit meter whose emoji shakes harder as intake climbs — HTML, CSS, JavaScript, and Tailwind.
               </p>
-              <a href="#" class="project-card__link">View case study →</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-card__media">
-              <div class="project-card__image project-card__image--gradient-4" role="img" aria-label="Creative coding experiment preview"></div>
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__meta">
-                <span class="badge badge--accent">Creative coding</span>
-                <span class="badge">2026</span>
+              <div class="project-card__links">
+                <a href="BuzzLog/index.html" class="project-card__link">View case study →</a>
               </div>
-              <h3 class="project-card__title type-h2">Abstract shape language</h3>
-              <p class="project-card__desc type-body">
-                Explored 3D-inspired decorative elements and palette-graded imagery as background accents while keeping all UI chrome within the orange/blue/neutral set.
-              </p>
-              <a href="#" class="project-card__link">View case study →</a>
             </div>
           </article>
         </div>
@@ -223,14 +223,12 @@
           Open to collaborations on design systems, creative development, and AI-assisted product work.
           Reach out to discuss your next project.
         </p>
-        <a href="mailto:hello@example.com" class="btn btn--primary">Send an email</a>
+        <a href="mailto:zhangna@iastate.edu" class="btn btn--primary">Send an email</a>
       </div>
 
       <div class="footer__links">
-        <a href="#" class="footer__link">GitHub</a>
-        <a href="#" class="footer__link">LinkedIn</a>
-        <a href="#" class="footer__link">Behance</a>
-        <a href="mailto:hello@example.com" class="footer__link">hello@example.com</a>
+        <a href="https://github.com/zhangna0826" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:zhangna@iastate.edu" class="footer__link">zhangna@iastate.edu</a>
       </div>
 
       <div class="footer__bottom">

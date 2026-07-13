@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatcher — Watchlist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/quiz/">Quiz</a>
+      <a href="/watchlist/">Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sectionFilters" class="filters">
+      <h1>My Watchlist</h1>
+      <div class="filter-tabs" role="tablist">
+        <button type="button" class="filter-tab filter-tab--active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-tab" data-filter="to-watch" role="tab" aria-selected="false">To watch</button>
+        <button type="button" class="filter-tab" data-filter="watched" role="tab" aria-selected="false">Watched</button>
+      </div>
+    </section>
+
+    <section id="sectionSavedList" class="saved-list">
+      <ul id="savedList" class="saved-list__items"></ul>
+      <p id="emptyState" class="empty-state">No saved films yet. Take the quiz to find your first match!</p>
+    </section>
+
+    <section id="sectionStats" class="stats">
+      <div class="stats__card">
+        <span class="stats__value" id="statTotal">0</span>
+        <span class="stats__label">Total saved</span>
+      </div>
+      <div class="stats__card">
+        <span class="stats__value" id="statWatched">0</span>
+        <span class="stats__label">Watched</span>
+      </div>
+      <div class="stats__card">
+        <span class="stats__value" id="statRemaining">0</span>
+        <span class="stats__label">Remaining</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/watchlist.js"></script>
+</body>
+</html>

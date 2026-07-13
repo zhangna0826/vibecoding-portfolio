@@ -314,7 +314,9 @@ Top-to-bottom order:
 4. **Content cards** — stacked `.card` sections inside `.project-content__grid`, gap `space.6`:
    - Overview (eyebrow + lead)
    - Challenge, Solution, Process (+ stepper), Outcomes
-   - Optional: Sketching, Information architecture, Visual development, Style guide, Gallery, Deployment
+   - Optional: AI-Assisted Development (prompt walkthrough), Sketching, Information architecture, Visual development, Style guide, Gallery (framed + lightbox), Reflection, Deployment
+   - Challenge may use a `.challenge-statement` pull-quote; Outcomes stay factual when Reflection is present
+   - Reference implementations: PulseFit (full shell); MovieMatcher (AI walkthrough, framed gallery, Reflection)
 5. **Project nav** — `.pulsefit-project-nav` footer links
 
 Body class: `project-page pulsefit-case`. One `h1` per page.
@@ -367,4 +369,4 @@ liveUrl, repoUrl          # optional URLs
 role, tools, processSteps # optional overrides
 ```
 
-Sections: Overview, Challenge, Solution, Process, Outcomes (required); Sketching, Information architecture, Visual development, Style guide, Gallery, Deployment (optional).
+Sections: Overview, Challenge, Solution, Process, Outcomes (required); AI-Assisted Development, Reflection, Sketching, Information architecture, Visual development, Style guide, Gallery, Deployment (optional).

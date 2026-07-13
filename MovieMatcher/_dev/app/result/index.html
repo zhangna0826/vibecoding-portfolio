@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMatcher — Result</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/quiz/">Quiz</a>
+      <a href="/watchlist/">Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sectionMovieCard" class="movie-card">
+      <div id="moviePoster" class="movie-card__poster"></div>
+      <div class="movie-card__body">
+        <p class="movie-card__eyebrow">Your match</p>
+        <h1 id="movieTitle"></h1>
+        <div class="movie-card__meta">
+          <span id="movieRating" class="rating"></span>
+        </div>
+        <div id="movieGenres" class="tag-list"></div>
+        <p id="movieSynopsis" class="movie-card__synopsis"></p>
+        <div class="movie-card__actions">
+          <button type="button" id="btnSaveWatchlist" class="btn btn--primary">Save to watchlist</button>
+          <a href="/quiz/" class="btn btn--secondary">Try again</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectionAlsoLike" class="also-like">
+      <h2>You might also like</h2>
+      <div id="alsoLikeGrid" class="suggestion-grid"></div>
+    </section>
+  </main>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/popup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/result.js"></script>
+</body>
+</html>

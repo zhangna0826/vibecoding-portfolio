@@ -91,7 +91,7 @@ If your app runs locally, you can automate portfolio images like MovieMatcher do
 
 1. Start your app (e.g. on port 8765).
 2. Install deps: `pip install Pillow`
-3. Adapt and run a script like `MovieMatcher/assets/_build_portfolio_images.py` (uses headless Chrome to screenshot pages and build cover/hero images).
+3. Adapt and run a script like `MovieMatcher/_dev/_build_portfolio_images.py` (uses headless Chrome to screenshot pages and build cover/hero images).
 
 ---
 
